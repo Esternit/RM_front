@@ -1,0 +1,52 @@
+body{
+  display: flex;
+  color: var(--tg-theme-text-color);
+  background: #fcfefe;
+  align-items: center;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.hint{
+  color: #fcfefe;
+}
+
+.link{
+  color: var(--tg-theme-link-color);
+}
+
+.button{
+  background: var(--tg-theme-button-color);
+  color: var(--tg-theme-button-text-color);
+  border: none;
+  font-size: 20px;
+}
+
+.button:not(:last-child){
+  margin-bottom: 15px
+}
+
+#usercard{
+  text-align: center;
+}
+.sizes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 40px);
+  width: 60%;
+  grid-gap: 4px;
+  /* margin-left: 25%; */
+  margin-top: 5px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.size {
+  padding: 9px;
+  border: 1px solid #24bebe;
+  font-size: 0.7em;
+  text-align: center;
+
+}
+.image{
+  max-width: 100%;
+}
