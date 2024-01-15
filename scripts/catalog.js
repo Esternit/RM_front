@@ -2,11 +2,11 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch('https://rmstoreapi-production.up.railway.app/getAll')
     .then(response => response.json())
     .then(data => loadHTMLTable(data['data']));
-    loadHTMLTable([]);
 });
 
 function loadHTMLTable(data){
     let catalog = '';
+    
     data.forEach(({ img, title, start_price ,id}) => {
         catalog += `
         <a class="item" href = "detail.html?id=${id}">
