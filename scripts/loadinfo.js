@@ -1,3 +1,12 @@
+let tg = window.Telegram.WebApp;
+
+tg.expand();
+
+tg.MainButton.textColor = '#FFFFFF';
+tg.MainButton.color = '#2cab37';
+
+let item = {};
+
 document.addEventListener('DOMContentLoaded', function () {
     const Id =  new URLSearchParams(window.location.search).get('id');
     fetch('https://rmstoreapi-production.up.railway.app/getById', {
@@ -18,20 +27,36 @@ function loadHTMLTable(data){
     const html = `
     <img src = "${outData[0]["img"]}" class="image"> 
     `;
-    let sizing = '';
-
+    const ROOT_SIZIING = document.getElementById('sizing');
+    const ROOT_PRODUCTS = document.getElementById('usercard');
     innerData.forEach(({ name_size, price}) => {
-        sizing += `
-        <div class="size">${name_size}<br />${price}&#165;</div>
-        `;
+        let inner = document.createElement('div');
+        inner.className = 'size';
+        inner.innerHTML = ` ${name_size}<br />${price}&#165;`;
+        inner.addEventListener("click", function () {
+            if (tg.MainButton.isVisible) {
+                tg.MainButton.hide();
+            }
+            else {
+                item = JSON.stringify({
+                    title : outData[0]["title"],
+                    pricing : price,
+                    size_name : name_size,
+                    id : outData[0]["id"]
+                });
+                console.log(item);
+                tg.MainButton.setText("Перейти в чат с продавцом " + outData[0]["title"]);
+                item = inner.innerHTML;
+                tg.MainButton.show();
+            }
+        })
+
+        ROOT_SIZIING.appendChild(inner);
     });
 
-    const ROOT_PRODUCTS = document.getElementById('usercard');
     ROOT_PRODUCTS.innerHTML = html;
     const ROOT_NAME=document.getElementById('naming');
     ROOT_NAME.innerText=outData[0]["title"];
-    const ROOT_SIZIING = document.getElementById('sizing');
-    ROOT_SIZIING.innerHTML = sizing;
 }
 
 /* async function loader(){
@@ -51,3 +76,7 @@ function loadHTMLTable(data){
     ROOT_NAME.innerText=catalog["name"];
 }
 loader(); */
+
+Telegram.WebApp.onEvent("mainButtonClicked", function(){
+	tg.sendData(item);
+});
