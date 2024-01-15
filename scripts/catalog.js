@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('http://80.90.191.204:80/getAll')
+    fetch('http://rmstoreapi-production.up.railway.app/getAll')
     .then(response => response.json())
     .then(data => loadHTMLTable(data['data']));
     loadHTMLTable([]);
