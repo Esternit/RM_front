@@ -83,3 +83,41 @@ body {
 		transform: translateY(-10px);
 	}
 }
+.search{
+	border: 5px solid;
+	margin: auto;
+	width: 50%;
+	padding: 10px;
+}
+
+#search-input{
+	height: 20px;
+	padding:10px;
+	border:0;
+	box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+	font-family:inherit;
+	font-size: inherit;
+}
+
+.btn-search{
+	appearance:none;
+	-webkit-appearance:none;
+  
+	/* usual styles */
+	padding:10px;
+	border:none;
+	background-color:#3F51B5;
+	color:#fff;
+	font-weight:600;
+	border-radius:5px;
+	width:100%;
+	cursor: pointer; 
+	transition: 0.2s all; 
+}
+
+.btn-search:active { 
+	transform: scale(0.98); 
+	/* Scaling button to 0.98 to its original size */ 
+	box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24); 
+	/* Lowering the shadow */ 
+} 
