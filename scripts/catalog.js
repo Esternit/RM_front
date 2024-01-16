@@ -68,7 +68,6 @@ loader();
  */
 
 function showLoading(){
-    console.log(loading);
     loading.classList.add('show');
 
     setTimeout(() => {
