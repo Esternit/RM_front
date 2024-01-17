@@ -46,7 +46,7 @@ function loadHTMLTable(data){
                     img : outData[0]["img"]
                 });
                 console.log(item);
-                tg.MainButton.setText("Перейти в чат с продавцом " + outData[0]["title"]);
+                tg.MainButton.setText("Перейти в чат с продавцом");
                 tg.MainButton.show();
             }
         })
