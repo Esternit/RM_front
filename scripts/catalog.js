@@ -1,21 +1,23 @@
-
 let limit = 16;
 let page = 1;
 let search = 0;
 let searchValue = "";
 
-function loadSearchHTMLTable(data){
+function loadSearchHTMLTable(data) {
     const ROOT_PRODUCTS = document.getElementById('listing');
-    if(data.length > 0){
+    if (data.length > 0) {
         let catalog = '';
-    
-        data.forEach(({ img, title, start_price ,id}) => {
+
+        data.forEach(({ img, title, start_price, id }) => {
             catalog += `
-            <a class="item" href = "detail.html?id=${id}">
-                <img src="${img}" alt="" class="img">
-                <div class="btn">${title}</div>
-                <div >${start_price} - это цена если что, её тоже желательно оформить</div>
-            </a>
+            <div class="card">
+                <a class="item" href = "detail.html?id=${id}">
+                    <img src="${img}" alt="" class="img">
+                </a>
+                <div class="itemname">${title}</div>
+                <div class="price">${start_price} ₽</div>
+                <div class="btn">Купить</div>
+            </div>
             `;
         });
         const html = `
@@ -23,27 +25,27 @@ function loadSearchHTMLTable(data){
             ${catalog}
         </div>
         `;
-        if(page == 1){
+        if (page == 1) {
             ROOT_PRODUCTS.innerHTML = html;
         }
-        else{
+        else {
             ROOT_PRODUCTS.innerHTML += html;
         }
-        
+
 
     }
-    }
-function searchfunc(){
-    if(document.querySelector('#search-input') != null){
+}
+function searchfunc() {
+    if (document.querySelector('#search-input') != null) {
         searchValue = document.querySelector('#search-input').value;
     }
-    
-    if (searchValue.length == 0){
+
+    if (searchValue.length == 0) {
         page = 1;
         loader();
     }
-    else{
-        if(search == 0){
+    else {
+        if (search == 0) {
             page = 1;
         }
         search = 1;
@@ -52,42 +54,45 @@ function searchfunc(){
                 'Content-type': 'application/json'
             },
             method: 'POST',
-            body: JSON.stringify({ limiter : limit, paging : page})
+            body: JSON.stringify({ limiter: limit, paging: page })
         })
-        .then(response => response.json())
-        .then(data => loadSearchHTMLTable(data['data']));
+            .then(response => response.json())
+            .then(data => loadSearchHTMLTable(data['data']));
     }
 
 }
 
-function loader (){
+function loader() {
     search = 0;
     fetch('https://rmstoreapi-production.up.railway.app/getAll', {
         headers: {
             'Content-type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ limiter : limit, paging : page})
+        body: JSON.stringify({ limiter: limit, paging: page })
     })
-    .then(response => response.json())
-    .then(data => loadHTMLTable(data['data']));
+        .then(response => response.json())
+        .then(data => loadHTMLTable(data['data']));
 }
 
 document.addEventListener('DOMContentLoaded', loader());
 
 
-function loadHTMLTable(data){
+function loadHTMLTable(data) {
 
-    if(data.length > 0){
+    if (data.length > 0) {
         let catalog = '';
-    
-        data.forEach(({ img, title, start_price ,id}) => {
+
+        data.forEach(({ img, title, start_price, id }) => {
             catalog += `
-            <a class="item" href = "detail.html?id=${id}">
-                <img src="${img}" alt="" class="img">
-                <div class="btn">${title}</div>
-                <div >${start_price} - это цена если что, её тоже желательно оформить</div>
-            </a>
+            <div class="card">
+                <a class="item" href = "detail.html?id=${id}">
+                    <img src="${img}" alt="" class="img">
+                </a>
+                <div class="itemname">${title}</div>
+                <div class="price">${start_price} ₽</div>
+                <div class="btn">Купить</div>
+            </div>
             `;
         });
         const html = `
@@ -95,17 +100,17 @@ function loadHTMLTable(data){
             ${catalog}
         </div>
         `;
-    
+
         const ROOT_PRODUCTS = document.getElementById('listing');
-        if(page == 1){
+        if (page == 1) {
             ROOT_PRODUCTS.innerHTML = html;
         }
-        else{
+        else {
             ROOT_PRODUCTS.innerHTML += html;
         }
-        
+
     }
-    }
+}
 
 
 /* async function loader() {

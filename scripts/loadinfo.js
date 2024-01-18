@@ -8,20 +8,20 @@ tg.MainButton.color = '#2cab37';
 let item = {};
 
 document.addEventListener('DOMContentLoaded', function () {
-    const Id =  new URLSearchParams(window.location.search).get('id');
+    const Id = new URLSearchParams(window.location.search).get('id');
     fetch('https://rmstoreapi-production.up.railway.app/getById', {
         headers: {
             'Content-type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ productId : Id})
+        body: JSON.stringify({ productId: Id })
     })
-    .then(response => response.json())
-    .then(data => loadHTMLTable(data['data']));
+        .then(response => response.json())
+        .then(data => loadHTMLTable(data['data']));
 });
 
-function loadHTMLTable(data){
-    
+function loadHTMLTable(data) {
+
     const outData = data['base'];
     const innerData = data['sizes']
     const html = `
@@ -29,7 +29,7 @@ function loadHTMLTable(data){
     `;
     const ROOT_SIZIING = document.getElementById('sizing');
     const ROOT_PRODUCTS = document.getElementById('usercard');
-    innerData.forEach(({ name_size, price}) => {
+    innerData.forEach(({ name_size, price }) => {
         let inner = document.createElement('div');
         inner.className = 'size';
         inner.innerHTML = ` ${name_size}<br />${price}&#165;`;
@@ -39,11 +39,11 @@ function loadHTMLTable(data){
             }
             else {
                 item = JSON.stringify({
-                    title : outData[0]["title"],
-                    pricing : price,
-                    size_name : name_size,
-                    id : outData[0]["id"],
-                    img : outData[0]["img"]
+                    title: outData[0]["title"],
+                    pricing: price,
+                    size_name: name_size,
+                    id: outData[0]["id"],
+                    img: outData[0]["img"]
                 });
                 console.log(item);
                 tg.MainButton.setText("Перейти в чат с продавцом");
@@ -55,8 +55,8 @@ function loadHTMLTable(data){
     });
 
     ROOT_PRODUCTS.innerHTML = html;
-    const ROOT_NAME=document.getElementById('naming');
-    ROOT_NAME.innerText=outData[0]["title"];
+    const ROOT_NAME = document.getElementById('naming');
+    ROOT_NAME.innerText = outData[0]["title"];
 }
 
 /* async function loader(){
@@ -77,6 +77,6 @@ function loadHTMLTable(data){
 }
 loader(); */
 
-Telegram.WebApp.onEvent("mainButtonClicked", function(){
-	tg.sendData(item);
+Telegram.WebApp.onEvent("mainButtonClicked", function () {
+    tg.sendData(item);
 });
