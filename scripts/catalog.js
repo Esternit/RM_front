@@ -84,12 +84,14 @@ function loadHTMLTable(data) {
         let catalog = '';
 
         data.forEach(({ img, title, start_price, id }) => {
-            catalog += `
-            <a class="item" href = "detail.html?id=${id}">
-                <img src="${img}" alt="" class="img">
-                <div class="btn">${title}</div>
-                <div >${start_price} - это цена если что, её тоже желательно оформить</div>
-            </a>
+            catalog += `       
+            <div class="card">
+                <a class="item" href = "detail.html?id=${id}">
+                    <img src="${img}" alt="" class="img">
+                    <div class="btn">${title}</div>
+                    <div class="price">${start_price}</div>
+                </a>
+            </div>
             `;
         });
         const html = `
