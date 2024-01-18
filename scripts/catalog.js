@@ -1,4 +1,3 @@
-
 let limit = 16;
 let page = 1;
 let search = 0;
@@ -14,9 +13,10 @@ function loadSearchHTMLTable(data) {
             <div class="card">
                 <a class="item" href = "detail.html?id=${id}">
                     <img src="${img}" alt="" class="img">
-                    <div class="btn">${title}</div>
-                    <div class="price">${start_price}</div>
                 </a>
+                <div class="itemname">${title}</div>
+                <div class="price">${start_price} ₽</div>
+                <div class="btn">Купить</div>
             </div>
             `;
         });
@@ -84,13 +84,14 @@ function loadHTMLTable(data) {
         let catalog = '';
 
         data.forEach(({ img, title, start_price, id }) => {
-            catalog += `       
+            catalog += `
             <div class="card">
                 <a class="item" href = "detail.html?id=${id}">
                     <img src="${img}" alt="" class="img">
-                    <div class="btn">${title}</div>
-                    <div class="price">${start_price}</div>
                 </a>
+                <div class="itemname">${title}</div>
+                <div class="price">${start_price} ₽</div>
+                <div class="btn">Купить</div>
             </div>
             `;
         });
