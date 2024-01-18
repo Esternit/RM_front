@@ -1,4 +1,4 @@
-body{
+body {
   display: flex;
   color: var(--tg-theme-text-color);
   background: #fcfefe;
@@ -7,18 +7,19 @@ body{
   font-size: 20px;
 }
 
-.hint{
+.hint {
   color: #fcfefe;
 }
 
-.link{
+.link {
   color: var(--tg-theme-link-color);
 }
 
 
-#usercard{
+#usercard {
   text-align: center;
 }
+
 .sizes {
   display: grid;
   grid-template-columns: repeat(auto-fill, 40px);
@@ -26,10 +27,12 @@ body{
   grid-gap: 4px;
   /* margin-left: 25%; */
   margin-top: 5px;
+
   &:hover {
     cursor: pointer;
   }
 }
+
 .size {
   padding: 9px;
   border: 1px solid #24bebe;
@@ -37,15 +40,17 @@ body{
   text-align: center;
 
 }
-.size:hover{
+
+.size:hover {
   opacity: 1;
   background-color: #00EEE0;
   border: 1px #99ccff solid;
 }
-.size:active{
+
+.size:active {
   color: red;
 }
 
-.image{
+.image {
   max-width: 100%;
 }
