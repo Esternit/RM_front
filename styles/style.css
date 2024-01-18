@@ -20,6 +20,18 @@ body {
 	width: 150px;
 }
 
+.listing {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	flex: 0 0 50%;
+}
+
+.card {
+	border: #969696;
+	border-radius: 4px;
+}
+
 .item {
 	text-align: center;
 }
@@ -39,6 +51,10 @@ body {
 
 .btn:hover {
 	background: lightgreen;
+}
+
+.price {
+
 }
 
 .usercard {
