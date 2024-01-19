@@ -3,11 +3,12 @@ body {
 	padding: 0;
 	font-size: 18px;
 	color: #fcfefe;
-	background: #f0f0f0;
+	background: rgb(228, 249, 254);
 }
 
 .container {
 	max-width: 390px;
+	margin: 0px 6px 0px 6px;
 }
 
 .inner {
@@ -37,45 +38,49 @@ body {
 
 .itemname {
 	color: #000000;
-	width: 100%;
+	width: 100%-8px;
+	margin-left: 4px;
+	margin-right: 4px;
 
 	padding-bottom: 15px;
 	
 	text-align: left;
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight: 400;
-	font-size: 12px;
+	font-size: 14px;
 }
 
 .price {
 	color: #000000;
-	margin-top: auto;
-	width: 100%;
+	margin: auto 6px 0px 6px;
+	width: auto;
 
-	border: 2px rgb(171, 162, 251);
+
+	border: 2px rgb(3, 101, 136);
 	border-style: solid none none none;
 	
 	text-align: left;
 	font-family: 'Montserrat', sans-serif;
-	font-style: italic;
 	font-size: 24px;
 	font-weight: 500;
 }
 
 .btn {
-	width: 100%;
+	width: auto;
 	display: inline-block;
 	padding: 10px 0px;
+	margin: 5px 5px 5px 5px;
 
 	border: none;
-	background: rgb(224, 253, 255);
-	border-radius: 20px;
-	color: #000000;
+	background: rgb(33, 187, 221);
+	border-radius: 15px;
+	color: #FFFFFF;
 	
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
 	text-align: center;
-	font-weight: 500;
+	font-size: 16px;
+	font-weight: 800;
 
 	transition: background .2s linear;
 }
@@ -130,40 +135,31 @@ body {
 }
 
 .search {
-	border: 5px solid;
-	margin: auto;
-	width: 50%;
+	width: 100%;
 	padding: 10px;
+	margin-bottom: 20px;
+
+	display: flex;
+	justify-content: center;
 }
 
 #search-input {
 	height: 20px;
-	padding: 10px;
+	width: 80%;
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+
 	border: 0;
+	border-radius: 20px;
+
 	box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
-	font-family: inherit;
-	font-size: inherit;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	font-weight: 300;
 }
 
-.btn-search {
-	appearance: none;
-	-webkit-appearance: none;
-
-	/* usual styles */
-	padding: 10px;
-	border: none;
-	background-color: #3F51B5;
-	color: #fff;
-	font-weight: 600;
-	border-radius: 5px;
-	width: 100%;
-	cursor: pointer;
-	transition: 0.2s all;
-}
-
-.btn-search:active {
-	transform: scale(0.98);
-	/* Scaling button to 0.98 to its original size */
-	box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-	/* Lowering the shadow */
+a {
+	text-decoration: none !important;
 }
