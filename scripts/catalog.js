@@ -11,12 +11,12 @@ function loadSearchHTMLTable(data) {
         data.forEach(({ img, title, start_price, id }) => {
             catalog += `
             <div class="card">
-                <a class="item" href = "detail.html?id=${id}">
+                <div class="item">
                     <img src="${img}" alt="" class="img">
-                </a>
+                </div>
                 <div class="itemname">${title}</div>
                 <div class="price">${start_price} ₽</div>
-                <div class="btn">Купить</div>
+                <a class="btn" href="detail.html?id=${id}">Купить</a>
             </div>
             `;
         });
@@ -86,12 +86,12 @@ function loadHTMLTable(data) {
         data.forEach(({ img, title, start_price, id }) => {
             catalog += `
             <div class="card">
-                <a class="item" href = "detail.html?id=${id}">
+                <div class="item">
                     <img src="${img}" alt="" class="img">
-                </a>
+                </div>
                 <div class="itemname">${title}</div>
                 <div class="price">${start_price} ₽</div>
-                <div class="btn">Купить</div>
+                <a class="btn" href="detail.html?id=${id}">Купить</a>
             </div>
             `;
         });

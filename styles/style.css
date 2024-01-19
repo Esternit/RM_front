@@ -155,6 +155,11 @@ body {
 	border-radius: 20px;
 
 	box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
-	font-family: inherit;
-	font-size: inherit;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+}
+
+a {
+	text-decoration: none !important;
 }
