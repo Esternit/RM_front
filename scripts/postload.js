@@ -22,6 +22,7 @@ function showLoading() {
 window.addEventListener('scroll', () => {
 
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    console.log(scrollTop, scrollHeight, clientHeight);
     if (scrollTop + clientHeight >= scrollHeight - 5) {
 
         showLoading();
