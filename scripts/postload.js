@@ -32,7 +32,7 @@ function loadsearch() {
     let searcher = document.getElementById("searcher");
     let test = document.createElement("div");
     test.className = "search";
-    test.innerHTML += `<input placeholder="search by name" id="search-input" oninput="searchfunc()">`;
+    test.innerHTML += `<input placeholder="искать по названию" id="search-input" oninput="searchfunc()">`;
     searcher.appendChild(test);
     console.log(test);
 }

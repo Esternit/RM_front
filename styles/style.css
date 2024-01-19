@@ -135,16 +135,25 @@ body {
 }
 
 .search {
-	border: 5px solid;
-	margin: auto;
-	width: 50%;
+	width: 100%;
 	padding: 10px;
+	margin-bottom: 20px;
+
+	display: flex;
+	justify-content: center;
 }
 
 #search-input {
 	height: 20px;
-	padding: 10px;
+	width: 80%;
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+
 	border: 0;
+	border-radius: 20px;
+
 	box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 	font-family: inherit;
 	font-size: inherit;
