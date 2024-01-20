@@ -1,3 +1,8 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -7,7 +12,6 @@ body {
 }
 
 .container {
-	max-width: 390px;
 	margin: 0px 6px 0px 6px;
 }
 
