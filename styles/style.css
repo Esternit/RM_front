@@ -6,9 +6,48 @@ html, body {
 body {
 	margin: 0;
 	padding: 0;
-	font-size: 18px;
-	color: #fcfefe;
 	background: rgb(228, 249, 254);
+}
+
+.link-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	align-items: center;
+	justify-content: space-evenly;
+
+	margin-bottom: 60px;
+}
+
+.teletype-info {
+	aspect-ratio: 1 / 1;
+	height: calc(100% - 16px);
+	max-width: 25%;
+}
+
+.teletype-info-text {
+	height: fit-content;
+}
+
+.teletype-info, .teletype-info-text {
+	flex: 0 1 25%;
+	
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.teletype-link {
+    display: inline-block;
+	flex-shrink: inherit;
+
+	aspect-ratio: 1 / 1;
+	height: inherit;
+	max-height: inherit;
+
+	border-radius: 50%;
+    background-color: #bbb;
 }
 
 .container {
@@ -27,7 +66,6 @@ body {
 }
 
 .card {
-	border: #fa0000;
 	border-radius: 20px;
 	background-color: white;
 	
