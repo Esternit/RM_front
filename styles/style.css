@@ -19,6 +19,7 @@ body {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 20px 20px;
+	padding-top: 20px;
 }
 
 .img {
@@ -27,7 +28,6 @@ body {
 }
 
 .card {
-	border: #fa0000;
 	border-radius: 20px;
 	background-color: white;
 	
