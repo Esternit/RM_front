@@ -6,7 +6,7 @@ tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
 
 let item = {};
-var BackButton = WebApp.BackButton;
+var BackButton = window.Telegram.WebApp.BackButton;
 BackButton.show();
 BackButton.onClick(function() {
     history.back();
