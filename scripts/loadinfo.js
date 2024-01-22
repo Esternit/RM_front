@@ -51,12 +51,13 @@ function loadHTMLTable(data) {
                 img: outData[0]["img"]
             });
             console.log(item);
-            tg.MainButton.setText("Перейти в чат с продавцом");
-            tg.MainButton.show();
         })
 
         ROOT_SIZIING.appendChild(inner);
     });
+
+    tg.MainButton.setText("Перейти в чат с продавцом");
+    tg.MainButton.show();
 
     ROOT_PRODUCTS.innerHTML = html;
     const ROOT_NAME = document.getElementById('naming');
@@ -65,4 +66,8 @@ function loadHTMLTable(data) {
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
     tg.sendData(item);
+});
+
+jQuery('size').click(function () {
+    jQuery(this).toggleClass('active');
 });
