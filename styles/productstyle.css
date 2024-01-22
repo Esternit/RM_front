@@ -50,7 +50,20 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
     font-size: 18px;
+}
 
+.item-info {
+    padding-top: 6px;
+    margin: 18px 18px 8px 18px;
+
+    text-align: justify;
+    text-justify: inter-word;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+#size-eu {
     border: 2px #464646;
     border-style: solid none none none;
 }
@@ -89,6 +102,11 @@ body {
 }
 
 .item-info-container {
+    width: 100%;
+    height: fit-content;
+
+    margin-top: 10px;
+
     border-radius: 15px;
     border-color: #000000;
     border-style: solid;
