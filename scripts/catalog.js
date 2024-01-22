@@ -36,6 +36,7 @@ function loadSearchHTMLTable(data) {
 
     }
 }
+
 function searchfunc() {
     if (document.querySelector('#search-input') != null) {
         searchValue = document.querySelector('#search-input').value;
@@ -78,7 +79,6 @@ function loader() {
 
 document.addEventListener('DOMContentLoaded', loader());
 
-
 function loadHTMLTable(data) {
 
     if (data.length > 0) {
@@ -112,33 +112,3 @@ function loadHTMLTable(data) {
 
     }
 }
-
-
-/* async function loader() {
-    const response = await fetch("./sample.json");
-    const data = await response.json();
-    let catalog = '';
-    data.forEach(({ img, name, product_id }) => {
-        catalog += `
-        <a class="item" href = "detail.html?id=${product_id}">
-            <img src="${img}" alt="" class="img">
-            <div class="btn">${name}</div>
-        </a>
-        `;
-    })
-    const html = `
-    <div class="inner">
-        ${catalog}
-    </div>
-    `;
-
-    const ROOT_PRODUCTS = document.getElementById('listing');
-    ROOT_PRODUCTS.innerHTML = html;
-}
-loader();
- */
-
-
-
-
-

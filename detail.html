@@ -1,30 +1,49 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/productstyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/productstyle.css">
 
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-  <script src="scripts/loadinfo.js"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="scripts/loadinfo.js"></script>
 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
+    </style>
 
-  <title>Document</title>
+    <title>Document</title>
 </head>
 
 <body>
-  <div id="usercard">
+    <div id="usercard"></div>
+    <p id="naming"></p>
+    <div class="pricing-container">
+        <div class="item-price" id="price"></div>
+        <p class="item-info-title" id="size-eu">Размер, EU</p>
+        <div class="sizes" id="sizing"></div>
+    </div>
+    <div class="item-info-container">
+        <p class="item-info-title">Доставка</p>
+        <p class="item-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue augue nisi, iaculis
+            dapibus turpis aliquet eu. Proin nec viverra mauris, eu tempor ligula. Pellentesque condimentum metus
+            iaculis, pellentesque lorem vitae, rhoncus tortor. Nullam ornare, felis vel venenatis iaculis, leo nunc
+            sagittis nulla, iaculis iaculis diam mauris in erat. Aenean nisi augue, tincidunt eu elit et, accumsan
+            aliquam ex. Vestibulum ligula tortor, pharetra sed scelerisque ac, vestibulum sed tortor. Vivamus tristique
+            interdum libero, porttitor luctus dui lobortis sit amet. </p>
+    </div>
+    <div class="item-info-container">
+        <p class="item-info-title">Страховка</p>
+        <p class="item-info">Quisque pulvinar massa at risus sodales, at luctus dolor semper. Nam viverra ex vitae
+            mauris malesuada, non lobortis eros porttitor. Aliquam id lectus id mauris condimentum vestibulum eu et
+            quam. Donec eleifend pulvinar laoreet. Donec sollicitudin id odio sed finibus. Proin imperdiet vitae risus
+            ut vehicula. Ut in dui justo. Praesent sit amet leo nulla. Proin enim dui, tempor placerat lacus at, mollis
+            auctor turpis. Donec scelerisque lobortis aliquam. Aliquam id nunc ut elit dapibus porttitor id vel erat.
+        </p>
+    </div>
 
-  </div>
-  <p id="naming"></p>
-  <div class="sizes" id="sizing">
-
-  </div>
-
-
-
-  <script src="scripts/tg-connect.js"></script>
+    <script src="scripts/tg-connect.js"></script>
 </body>
 
 </html>
