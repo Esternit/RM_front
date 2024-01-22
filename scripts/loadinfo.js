@@ -42,21 +42,17 @@ function loadHTMLTable(data) {
             const PRICE = document.getElementById('price');
             PRICE.innerText = price + "¥";
 
-            // doing something
-            if (tg.MainButton.isVisible) {
-                tg.MainButton.hide();
-            } else {
-                item = JSON.stringify({
-                    title: outData[0]["title"],
-                    pricing: price,
-                    size_name: name_size,
-                    id: outData[0]["id"],
-                    img: outData[0]["img"]
-                });
-                console.log(item);
-                tg.MainButton.setText("Перейти в чат с продавцом");
-                tg.MainButton.show();
-            }
+            // showing purchase button
+            item = JSON.stringify({
+                title: outData[0]["title"],
+                pricing: price,
+                size_name: name_size,
+                id: outData[0]["id"],
+                img: outData[0]["img"]
+            });
+            console.log(item);
+            tg.MainButton.setText("Перейти в чат с продавцом");
+            tg.MainButton.show();
         })
 
         ROOT_SIZIING.appendChild(inner);
