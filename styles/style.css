@@ -7,7 +7,7 @@ body {
 body {
 	margin: 0;
 	padding: 0;
-	background: rgb(228, 249, 254);
+	background: rgb(246, 254, 255);
 }
 
 .link-container {
@@ -29,6 +29,11 @@ body {
 
 .teletype-info-text {
 	height: fit-content;
+
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 14px;
 }
 
 .teletype-info,
@@ -49,7 +54,9 @@ body {
 	max-height: inherit;
 
 	border-radius: 50%;
-	background-color: #bbb;
+	/* background-color: red; */
+	background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+	box-shadow: 0 0 15px 8px rgba(0, 0, 0, 0.06);
 }
 
 .container {
@@ -71,6 +78,7 @@ body {
 .card {
 	border-radius: 20px;
 	background-color: white;
+	box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 
 	display: flex;
 	flex-direction: column;
@@ -208,6 +216,7 @@ body {
 a {
 	text-decoration: none !important;
 }
+
 input[type=search]::-webkit-search-cancel-button {
-    -webkit-appearance: searchfield-cancel-button;
+	-webkit-appearance: searchfield-cancel-button;
 }
