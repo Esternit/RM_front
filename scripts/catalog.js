@@ -50,7 +50,7 @@ function searchfunc() {
             page = 1;
         }
         search = 1;
-        fetch('https://rmstoreapi-production.up.railway.app/search/' + searchValue, {
+        fetch('http://localhost:5000/search/' + searchValue, {
             headers: {
                 'Content-type': 'application/json'
             },
@@ -65,7 +65,7 @@ function searchfunc() {
 
 function loader() {
     search = 0;
-    fetch('https://rmstoreapi-production.up.railway.app/getAll', {
+    fetch('http://localhost:5000/getAll', {
         headers: {
             'Content-type': 'application/json'
         },

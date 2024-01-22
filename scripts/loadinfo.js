@@ -9,7 +9,7 @@ let item = {};
 
 document.addEventListener('DOMContentLoaded', function () {
     const Id = new URLSearchParams(window.location.search).get('id');
-    fetch('https://rmstoreapi-production.up.railway.app/getById', {
+    fetch('http://localhost:5000/getById', {
         headers: {
             'Content-type': 'application/json'
         },
