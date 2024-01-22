@@ -35,7 +35,7 @@ body {
     margin-top: 10px;
 
     border-radius: 15px;
-    border-color: #000000;
+    border-color: rgb(7, 100, 134);
     border-style: solid;
 
     background-color: #FFFFFF;
@@ -48,7 +48,7 @@ body {
     margin-top: 10px;
 
     border-radius: 15px;
-    border-color: #000000;
+    border-color: rgb(7, 100, 134);
     border-style: solid;
 
     background-color: #FFFFFF;
@@ -105,7 +105,7 @@ body {
 }
 
 #size-eu {
-    border: 2px #464646;
+    border: 2px rgb(7, 100, 134);
     border-style: solid none none none;
 }
 
