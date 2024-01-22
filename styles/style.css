@@ -130,7 +130,7 @@ body {
 }
 
 .btn:hover {
-	background: lightgreen;
+	background: rgb(175, 243, 202);
 }
 
 .usercard {
