@@ -9,22 +9,26 @@
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="scripts/loadinfo.js"></script>
 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
+    </style>
 
     <title>Document</title>
 </head>
 
 <body>
-    <div id="usercard">
-
-    </div>
+    <div id="usercard"></div>
     <p id="naming"></p>
     <div class="pricing-container">
-        <div class="current-price">
-
-        </div>
-        <div class="sizes" id="sizing">
-
-        </div>
+        <div class="item-price" id="price"></div>
+        <p class="item-info-title">Размер, EU</p>
+        <div class="sizes" id="sizing"></div>
+    </div>
+    <div class="item-info-container">
+        <p class="item-info">Placeholder text 1. Доставка</p>
+    </div>
+    <div class="item-info-container">
+        <p class="item-info">Placeholder text 2. Страховка</p>
     </div>
 
     <script src="scripts/tg-connect.js"></script>

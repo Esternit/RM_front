@@ -29,15 +29,23 @@ function loadHTMLTable(data) {
     `;
     const ROOT_SIZIING = document.getElementById('sizing');
     const ROOT_PRODUCTS = document.getElementById('usercard');
+
+    const PRICE = document.getElementById('price');
+    PRICE.innerText = innerData[0].price + "¥";
+
     innerData.forEach(({ name_size, price }) => {
         let inner = document.createElement('div');
         inner.className = 'size';
         inner.innerHTML = ` ${name_size}<br />${price}&#165;`;
         inner.addEventListener("click", function () {
+            // replacing price
+            const PRICE = document.getElementById('price');
+            PRICE.innerText = price + "¥";
+
+            // doing something
             if (tg.MainButton.isVisible) {
                 tg.MainButton.hide();
-            }
-            else {
+            } else {
                 item = JSON.stringify({
                     title: outData[0]["title"],
                     pricing: price,
