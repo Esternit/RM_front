@@ -6,6 +6,12 @@ tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
 
 let item = {};
+var BackButton = window.Telegram.WebApp.BackButton;
+BackButton.show();
+BackButton.onClick(function () {
+    history.back();
+    BackButton.hide();
+});
 
 document.addEventListener('DOMContentLoaded', function () {
     const Id = new URLSearchParams(window.location.search).get('id');
@@ -66,8 +72,4 @@ function loadHTMLTable(data) {
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
     tg.sendData(item);
-});
-
-jQuery('size').click(function () {
-    jQuery(this).toggleClass('active');
 });
