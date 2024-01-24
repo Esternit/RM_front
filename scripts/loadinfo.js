@@ -5,6 +5,11 @@ tg.expand();
 tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
 
+
+if (tg.MainButton.isVisible) {
+    tg.MainButton.hide();
+}
+
 let item = {};
 var BackButton = WebApp.BackButton;
 BackButton.show();
@@ -57,8 +62,13 @@ function loadHTMLTable(data) {
                 img: outData[0]["img"]
             });
             console.log(item);
-            tg.MainButton.setText("Перейти в чат с продавцом");
-            tg.MainButton.show();
+            if (tg.MainButton.isVisible) {
+                tg.MainButton.hide();
+            }
+            else {
+                tg.MainButton.setText("Перейти в чат с продавцом");
+                tg.MainButton.show();
+            }
         })
 
         ROOT_SIZIING.appendChild(inner);
