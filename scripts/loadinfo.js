@@ -11,9 +11,9 @@ if (tg.MainButton.isVisible) {
 }
 
 let item = {};
-var BackButton = WebApp.BackButton;
+var BackButton = window.Telegram.WebApp.BackButton;
 BackButton.show();
-BackButton.onClick(function() {
+BackButton.onClick(function () {
     history.back();
     BackButton.hide();
 });
@@ -73,6 +73,9 @@ function loadHTMLTable(data) {
 
         ROOT_SIZIING.appendChild(inner);
     });
+
+    tg.MainButton.setText("Перейти в чат с продавцом");
+    tg.MainButton.show();
 
     ROOT_PRODUCTS.innerHTML = html;
     const ROOT_NAME = document.getElementById('naming');

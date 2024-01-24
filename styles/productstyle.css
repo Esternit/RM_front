@@ -3,7 +3,7 @@ body {
     flex-direction: column;
 
     color: black;
-    background: rgb(228, 249, 254);
+    background: rgb(246, 254, 255);
 
     align-items: center;
     font-size: 20px;
@@ -35,7 +35,7 @@ body {
     margin-top: 10px;
 
     border-radius: 15px;
-    border-color: #000000;
+    border-color: rgb(7, 100, 134);
     border-style: solid;
 
     background-color: #FFFFFF;
@@ -48,7 +48,7 @@ body {
     margin-top: 10px;
 
     border-radius: 15px;
-    border-color: #000000;
+    border-color: rgb(7, 100, 134);
     border-style: solid;
 
     background-color: #FFFFFF;
@@ -105,7 +105,7 @@ body {
 }
 
 #size-eu {
-    border: 2px #464646;
+    border: 2px rgb(7, 100, 134);
     border-style: solid none none none;
 }
 
@@ -125,8 +125,8 @@ body {
 
 .size:hover {
     opacity: 1;
-    background-color: lightgreen;
-    border: 1px rgb(33, 187, 221) solid;
+    background-color: rgb(175, 243, 202);
+    border-width: 0px;
 }
 
 .image {
