@@ -74,8 +74,6 @@ function loadHTMLTable(data) {
         ROOT_SIZIING.appendChild(inner);
     });
 
-    tg.MainButton.setText("Перейти в чат с продавцом");
-    tg.MainButton.show();
 
     ROOT_PRODUCTS.innerHTML = html;
     const ROOT_NAME = document.getElementById('naming');
