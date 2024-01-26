@@ -71,6 +71,11 @@ body {
 	border-radius: 50%;
 }
 
+.teletype-link-image {
+	width: 100%;
+	border-radius: 50%;
+}
+
 .container {
 	margin: 0px 6px 0px 6px;
 }
