@@ -83,3 +83,4 @@ function loadHTMLTable(data) {
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
     tg.sendData(item);
 });
+
