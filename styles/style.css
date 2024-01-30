@@ -25,6 +25,8 @@ body {
 	aspect-ratio: 1 / 1;
 	height: calc(100% - 16px);
 	max-width: 25%;
+	background: linear-gradient(45deg, gold, fuchsia);
+	border-radius: 170%;
 }
 
 .teletype-info-text {
@@ -52,7 +54,7 @@ body {
 	aspect-ratio: 1 / 1;
 	height: inherit;
 	max-height: inherit;
-
+	margin-top: 8px;
 	border-radius: 50%;
 	/* background-color: red; */
 	background: rgb(33, 187, 221);
