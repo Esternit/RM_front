@@ -19,7 +19,7 @@ function loadSearchHTMLTable(data) {
                 </div>
                 <div class="itemname">${title}</div>
                 <div class="price">${start_price} ₽</div>
-                <a class="btn" href="detail.html?id=${id}">Купить</a>
+                <a class="btn" href="detail.html?id=${id}">Заказать</a>
             </div>
             `;
             /* ₽ */
