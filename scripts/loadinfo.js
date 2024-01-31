@@ -62,13 +62,8 @@ function loadHTMLTable(data) {
                 img: outData[0]["img"]
             });
             console.log(item);
-            if (tg.MainButton.isVisible) {
-                tg.MainButton.hide();
-            }
-            else {
-                tg.MainButton.setText("Перейти в чат с менеджером");
-                tg.MainButton.show();
-            }
+            tg.MainButton.setText("Перейти в чат с менеджером");
+            tg.MainButton.show();
         })
 
         ROOT_SIZIING.appendChild(inner);
