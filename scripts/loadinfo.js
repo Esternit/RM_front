@@ -42,16 +42,16 @@ function loadHTMLTable(data) {
     const ROOT_PRODUCTS = document.getElementById('usercard');
 
     const PRICE = document.getElementById('price');
-    PRICE.innerText = innerData[0].price + "¥";
+    PRICE.innerText = innerData[0].price + " ₽";
 
     innerData.forEach(({ name_size, price }) => {
         let inner = document.createElement('div');
         inner.className = 'size';
-        inner.innerHTML = ` ${name_size}<br />${price}&#165;`;
+        inner.innerHTML = ` ${name_size}<br />${price} ₽`;
         inner.addEventListener("click", function () {
             // replacing price
             const PRICE = document.getElementById('price');
-            PRICE.innerText = price + "¥";
+            PRICE.innerText = price + " ₽";
 
             // showing purchase button
             item = JSON.stringify({
@@ -66,7 +66,7 @@ function loadHTMLTable(data) {
                 tg.MainButton.hide();
             }
             else {
-                tg.MainButton.setText("Перейти в чат с продавцом");
+                tg.MainButton.setText("Перейти в чат с менеджером");
                 tg.MainButton.show();
             }
         })

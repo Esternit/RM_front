@@ -18,7 +18,7 @@ function loadSearchHTMLTable(data) {
                     <img src="${img}" alt="" class="img">
                 </div>
                 <div class="itemname">${title}</div>
-                <div class="price">${start_price} ¥</div>
+                <div class="price">${start_price} ₽</div>
                 <a class="btn" href="detail.html?id=${id}">Купить</a>
             </div>
             `;
@@ -94,7 +94,7 @@ function loadHTMLTable(data) {
                     <img src="${img}" alt="" class="img">
                 </div>
                 <div class="itemname">${title}</div>
-                <div class="price">${start_price} ¥</div>
+                <div class="price">${start_price} ₽</div>
                 <a class="btn" href="detail.html?id=${id}">Купить</a>
             </div>
             `;
