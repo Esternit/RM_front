@@ -14,7 +14,7 @@ let item = {};
 var BackButton = window.Telegram.WebApp.BackButton;
 BackButton.show();
 BackButton.onClick(function () {
-    history.back();
+    window.open("index.html");
     BackButton.hide();
 });
 
