@@ -138,13 +138,13 @@ function loadHTMLTable(data) {
     }
     done = 0;
     const spuds = new URLSearchParams(window.location.search).get('spuds');
-    if(spuds != null && spuds != "reset"){
+/*     if(spuds != null && spuds != "reset"){
         console.log(document.getElementById(spuds));
         document.getElementById(spuds).scrollIntoView({
             behavior: 'auto'
           });
         document.cookie = "spuds=reset";
-    }
+    } */
     tg.MainButton.hide();
 }
 
