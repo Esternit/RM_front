@@ -82,5 +82,6 @@ Telegram.WebApp.onEvent("mainButtonClicked", function () {
 
 function test(){
     const Id = new URLSearchParams(window.location.search).get('id');
+    document.cookie = "spuds="+Id;
     window.location.href='index.html';
 }
