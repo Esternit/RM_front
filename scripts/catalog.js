@@ -1,7 +1,10 @@
-let limit = 16;
+let limit = 10;
 let page = 1;
 let search = 0;
 let searchValue = "";
+let tg = window.Telegram.WebApp;
+
+tg.expand();
 
 function loadSearchHTMLTable(data) {
     const ROOT_PRODUCTS = document.getElementById('listing');
@@ -15,8 +18,8 @@ function loadSearchHTMLTable(data) {
                     <img src="${img}" alt="" class="img">
                 </div>
                 <div class="itemname">${title}</div>
-                <div class="price">${start_price} ¥</div>
-                <a class="btn" href="detail.html?id=${id}">Купить</a>
+                <div class="price">${start_price} ₽</div>
+                <a class="btn" href="detail.html?id=${id}">Заказать</a>
             </div>
             `;
             /* ₽ */
@@ -91,8 +94,8 @@ function loadHTMLTable(data) {
                     <img src="${img}" alt="" class="img">
                 </div>
                 <div class="itemname">${title}</div>
-                <div class="price">${start_price} ¥</div>
-                <a class="btn" href="detail.html?id=${id}">Купить</a>
+                <div class="price">${start_price} ₽</div>
+                <a class="btn" href="detail.html?id=${id}">Заказать</a>
             </div>
             `;
         });
@@ -123,3 +126,17 @@ document.addEventListener('touchstart', function (e) {
         console.log(document.activeElement);
     }
 }, false);
+
+
+function myFunction() {
+    
+    tg.openLink("https://rmpoizon.store");
+    console.log("opened");
+}
+
+
+function myFunction2() {
+    
+    tg.openTelegramLink("https://t.me/pavtoko");
+    console.log("opened");
+}
