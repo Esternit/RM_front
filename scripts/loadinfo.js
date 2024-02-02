@@ -7,6 +7,9 @@ tg.MainButton.color = '#2cab37';
 
 
 if (tg.MainButton.isVisible) {
+    const Id = new URLSearchParams(window.location.search).get('id');
+    document.cookie = "spuds="+Id;
+    window.location.href='index.html';
     tg.MainButton.hide();
 }
 
@@ -78,3 +81,8 @@ Telegram.WebApp.onEvent("mainButtonClicked", function () {
     tg.sendData(item);
 });
 
+function test(){
+    const Id = new URLSearchParams(window.location.search).get('id');
+    document.cookie = "spuds="+Id;
+    window.location.href='index.html';
+}

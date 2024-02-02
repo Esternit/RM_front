@@ -88,6 +88,7 @@ function loader() {
     }
     else{
         document.cookie = "left_before="+1;
+        console.log(cookieValue);
         fetch('https://rmstoreapi-production.up.railway.app/getAllDataFromStart', {
             headers: {
                 'Content-type': 'application/json'
@@ -138,6 +139,17 @@ function loadHTMLTable(data) {
 
     }
     done = 0;
+    const spuds = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("spuds="))
+        ?.split("=")[1];
+    if(spuds != null && spuds != "reset"){
+        console.log(document.getElementById(spuds));
+        document.getElementById(spuds).scrollIntoView({
+            behavior: 'auto'
+          });
+        document.cookie = "spuds=reset";
+    }
 }
 
 function isTextInput(node) {
