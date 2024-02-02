@@ -75,7 +75,10 @@ function loader() {
     search = 0;
     params=new URLSearchParams(window.location.search);
     const cookieValue = params.get('page');
-    if((cookieValue == null || cookieValue == "1") && doning == 0){
+    console.log(cookieValue);
+    if(doning == 1 || cookieValue == null){
+        console.log("here");
+        
         fetch('https://rmstoreapi-production.up.railway.app/getAll', {
             headers: {
                 'Content-type': 'application/json'
@@ -89,7 +92,7 @@ function loader() {
     else{
         
         
-        console.log(cookieValue);
+        console.log(cookieValue,doning);
         fetch('https://rmstoreapi-production.up.railway.app/getAllDataFromStart', {
             headers: {
                 'Content-type': 'application/json'
@@ -142,10 +145,13 @@ function loadHTMLTable(data) {
     done = 0;
     params=new URLSearchParams(window.location.search);
     const spuds = params.get('spuds');
-    if(spuds != null && spuds != "reset" && doning == 1){
-        console.log(document.getElementById(spuds));
-        window.scrollTo(0, document.body.scrollHeight);
-        doning = 0;
+
+    if(doning == 0){
+        if(spuds != null){
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+        
+        doning = 1;
     }
     tg.MainButton.hide();
 }
