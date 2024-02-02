@@ -87,7 +87,7 @@ function loader() {
             .then(data => loadHTMLTable(data['data']));
     }
     else{
-        doning  = 0;
+        
         
         console.log(cookieValue);
         fetch('https://rmstoreapi-production.up.railway.app/getAllDataFromStart', {
