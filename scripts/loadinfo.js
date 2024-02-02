@@ -20,6 +20,7 @@ BackButton.onClick(function () {
     window.location.href='index.html?page='+paging+"&spuds="+Id;
     BackButton.hide();
     tg.MainButton.hide();
+    done = 1;
 });
 
 document.addEventListener('DOMContentLoaded', function () {
