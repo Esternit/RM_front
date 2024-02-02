@@ -6,6 +6,7 @@ let searchValue = "";
 let tg = window.Telegram.WebApp;
 
 tg.expand();
+tg.MainButton.hide();
 
 function loadSearchHTMLTable(data) {
     const ROOT_PRODUCTS = document.getElementById('listing');
