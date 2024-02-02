@@ -139,8 +139,10 @@ function loadHTMLTable(data) {
     done = 0;
     const spuds = new URLSearchParams(window.location.search).get('spuds');
     if(spuds != null && spuds != "reset"){
+        var container = document.body,
+        element = document.getElementById(spuds);
+        container.scrollTop = element.offsetTop;
         console.log(document.getElementById(spuds));
-        window.scrollTo(0, document.body.scrollHeight);
         document.cookie = "spuds=reset";
     }
     tg.MainButton.hide();
