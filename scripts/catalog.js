@@ -145,6 +145,7 @@ function loadHTMLTable(data) {
           });
         document.cookie = "spuds=reset";
     }
+    tg.MainButton.hide();
 }
 
 function isTextInput(node) {
