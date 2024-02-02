@@ -19,6 +19,7 @@ BackButton.onClick(function () {
     document.cookie = "spuds="+Id;
     window.location.href='index.html?page='+paging+"&spuds="+Id;
     BackButton.hide();
+    tg.MainButton.hide();
 });
 
 document.addEventListener('DOMContentLoaded', function () {
