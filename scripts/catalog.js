@@ -1,4 +1,4 @@
-let limit = 16;
+let limit = 10;
 let page = 1;
 let search = 0;
 let searchValue = "";
@@ -95,7 +95,7 @@ function loadHTMLTable(data) {
                 </div>
                 <div class="itemname">${title}</div>
                 <div class="price">${start_price} ₽</div>
-                <a class="btn" href="detail.html?id=${id}">Купить</a>
+                <a class="btn" href="detail.html?id=${id}">Заказать</a>
             </div>
             `;
         });
