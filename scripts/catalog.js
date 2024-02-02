@@ -1,5 +1,6 @@
 let limit = 10;
 let page = 1;
+let amount = 1;
 let search = 0;
 let searchValue = "";
 let tg = window.Telegram.WebApp;
@@ -13,7 +14,7 @@ function loadSearchHTMLTable(data) {
 
         data.forEach(({ img, title, start_price, id }) => {
             catalog += `
-            <div class="card">
+            <div class="card" id="${id}">
                 <div class="item">
                     <img src="${img}" alt="" class="img">
                 </div>
@@ -38,6 +39,7 @@ function loadSearchHTMLTable(data) {
 
 
     }
+    done = 0;
 }
 
 function searchfunc() {
@@ -69,35 +71,56 @@ function searchfunc() {
 
 function loader() {
     search = 0;
-    fetch('https://rmstoreapi-production.up.railway.app/getAll', {
-        headers: {
-            'Content-type': 'application/json'
-        },
-        method: 'POST',
-        body: JSON.stringify({ limiter: limit, paging: page })
-    })
-        .then(response => response.json())
-        .then(data => loadHTMLTable(data['data']));
+    const cookieValue = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("left_before="))
+        ?.split("=")[1];
+    if(cookieValue == null || cookieValue == "1"){
+        fetch('https://rmstoreapi-production.up.railway.app/getAll', {
+            headers: {
+                'Content-type': 'application/json'
+            },
+            method: 'POST',
+            body: JSON.stringify({ limiter: limit, paging: page })
+        })
+            .then(response => response.json())
+            .then(data => loadHTMLTable(data['data']));
+    }
+    else{
+        document.cookie = "left_before="+1;
+        fetch('https://rmstoreapi-production.up.railway.app/getAllDataFromStart', {
+            headers: {
+                'Content-type': 'application/json'
+            },
+            method: 'POST',
+            body: JSON.stringify({ limiter: limit, paging: cookieValue })
+        })
+            .then(response => response.json())
+            .then(data => loadHTMLTable(data['data']));
+    }
+
 }
 
 document.addEventListener('DOMContentLoaded', loader());
 
 function loadHTMLTable(data) {
+    
 
     if (data.length > 0) {
         let catalog = '';
 
         data.forEach(({ img, title, start_price, id }) => {
             catalog += `
-            <div class="card">
+            <div class="card" id="${id}">
                 <div class="item">
                     <img src="${img}" alt="" class="img">
                 </div>
                 <div class="itemname">${title}</div>
                 <div class="price">${start_price} ₽</div>
-                <a class="btn" href="detail.html?id=${id}">Заказать</a>
+                <a class="btn" href="detail.html?id=${id}" onclick="getPage()">Заказать</a>
             </div>
             `;
+            amount++;
         });
         const html = `
         <div class="inner">
@@ -114,6 +137,7 @@ function loadHTMLTable(data) {
         }
 
     }
+    done = 0;
 }
 
 function isTextInput(node) {
@@ -139,4 +163,9 @@ function myFunction2() {
     
     tg.openTelegramLink("https://t.me/pavtoko");
     console.log("opened");
+}
+
+function getPage(){
+    console.log("tapped");
+    document.cookie="left_before="+page.toString();
 }

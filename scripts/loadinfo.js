@@ -61,7 +61,6 @@ function loadHTMLTable(data) {
                 id: outData[0]["id"],
                 img: outData[0]["img"]
             });
-            console.log(item);
             tg.MainButton.setText("Перейти в чат с менеджером");
             tg.MainButton.show();
         })
