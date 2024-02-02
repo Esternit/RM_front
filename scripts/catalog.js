@@ -86,7 +86,7 @@ function loader() {
             .then(data => loadHTMLTable(data['data']));
     }
     else{
-        params.delete("page");
+        window.location.search="";
         console.log(cookieValue);
         fetch('https://rmstoreapi-production.up.railway.app/getAllDataFromStart', {
             headers: {
@@ -143,7 +143,7 @@ function loadHTMLTable(data) {
     if(spuds != null && spuds != "reset"){
         console.log(document.getElementById(spuds));
         window.scrollTo(0, document.body.scrollHeight);
-        params.delete("spuds");
+        window.location.search="";
     }
     tg.MainButton.hide();
 }
