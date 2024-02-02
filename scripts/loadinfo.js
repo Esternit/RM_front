@@ -7,9 +7,6 @@ tg.MainButton.color = '#2cab37';
 
 
 if (tg.MainButton.isVisible) {
-    const Id = new URLSearchParams(window.location.search).get('id');
-    document.cookie = "spuds="+Id;
-    window.location.href='index.html';
     tg.MainButton.hide();
 }
 
@@ -17,7 +14,9 @@ let item = {};
 var BackButton = window.Telegram.WebApp.BackButton;
 BackButton.show();
 BackButton.onClick(function () {
-    window.open("https://rmstoreapi-production.up.railway.app");
+    const Id = new URLSearchParams(window.location.search).get('id');
+    document.cookie = "spuds="+Id;
+    window.location.href='index.html';
     BackButton.hide();
 });
 
@@ -83,6 +82,5 @@ Telegram.WebApp.onEvent("mainButtonClicked", function () {
 
 function test(){
     const Id = new URLSearchParams(window.location.search).get('id');
-    document.cookie = "spuds="+Id;
     window.location.href='index.html';
 }
