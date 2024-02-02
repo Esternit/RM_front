@@ -14,7 +14,7 @@ let item = {};
 var BackButton = window.Telegram.WebApp.BackButton;
 BackButton.show();
 BackButton.onClick(function () {
-    window.open("index.html");
+    window.open("https://rmstoreapi-production.up.railway.app");
     BackButton.hide();
 });
 
