@@ -72,7 +72,8 @@ function searchfunc() {
 
 function loader() {
     search = 0;
-    const cookieValue = new URLSearchParams(window.location.search).get('page');
+    params=new URLSearchParams(window.location.search);
+    const cookieValue = params.get('page');
     if(cookieValue == null || cookieValue == "1"){
         fetch('https://rmstoreapi-production.up.railway.app/getAll', {
             headers: {
@@ -85,7 +86,7 @@ function loader() {
             .then(data => loadHTMLTable(data['data']));
     }
     else{
-        document.cookie = "left_before="+1;
+        params.delete("page");
         console.log(cookieValue);
         fetch('https://rmstoreapi-production.up.railway.app/getAllDataFromStart', {
             headers: {
@@ -137,13 +138,12 @@ function loadHTMLTable(data) {
 
     }
     done = 0;
-    const spuds = new URLSearchParams(window.location.search).get('spuds');
+    params=new URLSearchParams(window.location.search);
+    const spuds = params.get('spuds');
     if(spuds != null && spuds != "reset"){
-        var container = document.body,
-        element = document.getElementById(spuds);
-        container.scrollTop = element.offsetTop;
         console.log(document.getElementById(spuds));
-        document.cookie = "spuds=reset";
+        window.scrollTo(0, document.body.scrollHeight);
+        params.delete("spuds");
     }
     tg.MainButton.hide();
 }
