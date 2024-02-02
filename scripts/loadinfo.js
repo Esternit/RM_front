@@ -15,8 +15,9 @@ var BackButton = window.Telegram.WebApp.BackButton;
 BackButton.show();
 BackButton.onClick(function () {
     const Id = new URLSearchParams(window.location.search).get('id');
+    const paging = new URLSearchParams(window.location.search).get('page');
     document.cookie = "spuds="+Id;
-    window.location.href='index.html';
+    window.location.href='index.html?page='+paging+"&spuds="+Id;
     BackButton.hide();
 });
 
@@ -82,6 +83,7 @@ Telegram.WebApp.onEvent("mainButtonClicked", function () {
 
 function test(){
     const Id = new URLSearchParams(window.location.search).get('id');
+    const paging = new URLSearchParams(window.location.search).get('page');
     document.cookie = "spuds="+Id;
-    window.location.href='index.html';
+    window.location.href='index.html?page='+paging+"&spuds="+Id;
 }

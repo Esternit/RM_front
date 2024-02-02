@@ -20,7 +20,7 @@ function loadSearchHTMLTable(data) {
                 </div>
                 <div class="itemname">${title}</div>
                 <div class="price">${start_price} ₽</div>
-                <a class="btn" href="detail.html?id=${id}">Заказать</a>
+                <a class="btn" href="detail.html?id=${id}&page=${page}">Заказать</a>
             </div>
             `;
             /* ₽ */
@@ -71,10 +71,7 @@ function searchfunc() {
 
 function loader() {
     search = 0;
-    const cookieValue = document.cookie
-        .split("; ")
-        .find((row) => row.startsWith("left_before="))
-        ?.split("=")[1];
+    const cookieValue = new URLSearchParams(window.location.search).get('page');
     if(cookieValue == null || cookieValue == "1"){
         fetch('https://rmstoreapi-production.up.railway.app/getAll', {
             headers: {
@@ -118,7 +115,7 @@ function loadHTMLTable(data) {
                 </div>
                 <div class="itemname">${title}</div>
                 <div class="price">${start_price} ₽</div>
-                <a class="btn" href="detail.html?id=${id}" onclick="getPage()">Заказать</a>
+                <a class="btn" href="detail.html?id=${id}&page=${page}" onclick="getPage()">Заказать</a>
             </div>
             `;
             amount++;
@@ -139,10 +136,7 @@ function loadHTMLTable(data) {
 
     }
     done = 0;
-    const spuds = document.cookie
-        .split("; ")
-        .find((row) => row.startsWith("spuds="))
-        ?.split("=")[1];
+    const spuds = new URLSearchParams(window.location.search).get('spuds');
     if(spuds != null && spuds != "reset"){
         console.log(document.getElementById(spuds));
         document.getElementById(spuds).scrollIntoView({
