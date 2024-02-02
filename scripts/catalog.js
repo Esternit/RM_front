@@ -4,7 +4,7 @@ let amount = 1;
 let search = 0;
 let searchValue = "";
 let tg = window.Telegram.WebApp;
-let done = 0;
+let doning = 0;
 
 tg.expand();
 tg.MainButton.hide();
@@ -75,7 +75,7 @@ function loader() {
     search = 0;
     params=new URLSearchParams(window.location.search);
     const cookieValue = params.get('page');
-    if((cookieValue == null || cookieValue == "1") && done == 0){
+    if((cookieValue == null || cookieValue == "1") && doning == 0){
         fetch('https://rmstoreapi-production.up.railway.app/getAll', {
             headers: {
                 'Content-type': 'application/json'
@@ -87,7 +87,7 @@ function loader() {
             .then(data => loadHTMLTable(data['data']));
     }
     else{
-        done  = 0;
+        doning  = 0;
         
         console.log(cookieValue);
         fetch('https://rmstoreapi-production.up.railway.app/getAllDataFromStart', {
@@ -142,10 +142,10 @@ function loadHTMLTable(data) {
     done = 0;
     params=new URLSearchParams(window.location.search);
     const spuds = params.get('spuds');
-    if(spuds != null && spuds != "reset" && done == 1){
+    if(spuds != null && spuds != "reset" && doning == 1){
         console.log(document.getElementById(spuds));
         window.scrollTo(0, document.body.scrollHeight);
-        done = 0;
+        doning = 0;
     }
     tg.MainButton.hide();
 }
