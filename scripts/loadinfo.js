@@ -16,8 +16,15 @@ BackButton.show();
 BackButton.onClick(function () {
     const Id = new URLSearchParams(window.location.search).get('id');
     const paging = new URLSearchParams(window.location.search).get('page');
-    doning = 1;
-    window.location.href='index.html?page='+paging+"&spuds="+Id;
+    const sh = new URLSearchParams(window.location.search).get('search');
+    if(sh != null){
+        window.location.href='search.html?page='+paging+"&spuds="+Id+"&search="+sh;
+    }
+    else{
+        doning = 1;
+        window.location.href='index.html?page='+paging+"&spuds="+Id;
+    }
+
     BackButton.hide();
     tg.MainButton.hide();
 });
@@ -90,4 +97,18 @@ function test(){
     BackButton.hide();
     tg.MainButton.hide();
     
+}
+
+function backfunc(){
+    const Id = new URLSearchParams(window.location.search).get('id');
+    const paging = new URLSearchParams(window.location.search).get('page');
+    const sh = new URLSearchParams(window.location.search).get('search');
+    if(sh != null){
+        window.location.href='search.html?page='+paging+"&spuds="+Id+"&search="+sh;
+    }
+    else{
+        doning = 1;
+        window.location.href='index.html?page='+paging+"&spuds="+Id;
+    }
+
 }

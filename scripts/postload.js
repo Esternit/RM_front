@@ -1,41 +1,54 @@
+let tg = window.Telegram.WebApp;
+
+tg.expand();
+var BackButton = window.Telegram.WebApp.BackButton;
+BackButton.onClick(function () {
+    window.location.href='index.html';
+
+    BackButton.hide();
+    tg.MainButton.hide();
+});
+
 const loading = document.querySelector('.loader');
 
 let done = 0;
 
-function showLoading() {
-    loading.classList.add('show');
-
-    done = 1;
-    setTimeout(() => {
-        loading.classList.remove('show');
-        setTimeout(() => {
-            page++;
-            if (search == 0) {
-                loader();
-            }
-            else {
-                searchfunc();
-            }
-
-        }, 300);
-    }, 1000);
-}
-
-window.addEventListener('scroll', () => {
-
-    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-    if (scrollTop + clientHeight >= scrollHeight - 30 && done == 0) {
-        showLoading();
-    }
-});
 
 function loadsearch() {
+    const sh = new URLSearchParams(window.location.search).get('search');
     let searcher = document.getElementById("searcher");
     let test = document.createElement("div");
     test.className = "search";
-    test.innerHTML += `<input placeholder="искать по названию" id="search-input" oninput="searchfunc()">`;
+    if (window.location.href.indexOf("search.html") != -1){
+        test.innerHTML += `<input placeholder="Поиск по названию" id="search-input" class = "inputbox" oninput="searchfunc()"/>`;
+        BackButton.show();
+    }
+    else{
+        test.innerHTML += `<input placeholder="Поиск по названию" id="search-input" class = "wideinputbox" onclick = "testFunc()" />`;
+    }
+    
     searcher.appendChild(test);
+    setTimeout(() => {
+        document.getElementById("search-input").classList.toggle('transition');
+      }, 100);
+    if (sh != null){
+        document.getElementById("search-input").value=sh;
+
+    }
 }
+
+function testFunc(){
+    console.log(window.location.href)
+    if (window.location.href.indexOf("search.html") == -1){
+        
+        window.location.href="search.html";
+        console.log(document.getElementById("search-input"));
+    }
+    
+}
+
+
+
 loadsearch();
 
 

@@ -13,7 +13,7 @@ function loadSearchHTMLTable(data) {
     const ROOT_PRODUCTS = document.getElementById('listing');
     if (data.length > 0) {
         let catalog = '';
-
+        
         data.forEach(({ img, title, start_price, id }) => {
             catalog += `
             <div class="card" id="${id}">
@@ -181,7 +181,26 @@ function myFunction2() {
     console.log("opened");
 }
 
-function getPage(){
-    console.log("tapped");
-    document.cookie="left_before="+page.toString();
+function showLoading() {
+    loading.classList.add('show');
+
+    done = 1;
+    setTimeout(() => {
+        loading.classList.remove('show');
+        setTimeout(() => {
+            page++;
+            
+            loader();
+            
+
+        }, 300);
+    }, 1000);
 }
+
+window.addEventListener('scroll', () => {
+
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    if (scrollTop + clientHeight >= scrollHeight - 30 && done == 0) {
+        showLoading();
+    }
+});
