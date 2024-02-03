@@ -1,12 +1,17 @@
-let tg = window.Telegram.WebApp;
 
-tg.expand();
+let tgk = window.Telegram.WebApp;
+
+
+
+
+
+tgk.expand();
 var BackButton = window.Telegram.WebApp.BackButton;
 BackButton.onClick(function () {
     window.location.href='index.html';
 
     BackButton.hide();
-    tg.MainButton.hide();
+    tgk.MainButton.hide();
 });
 
 const loading = document.querySelector('.loader');
