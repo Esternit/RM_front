@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function loadHTMLTable(data) {
 
     const outData = data['base'];
-    const innerData = data['sizes']
+    const innerData = data['sizes'];
     const html = `
     <img src = "${outData[0]["img"]}" class="image"> 
     `;
