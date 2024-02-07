@@ -54,26 +54,14 @@ body {
 	height: inherit;
 	max-height: inherit;
 
-	border-radius: 50%;
+	border-radius: 14%;
 	background: rgb(33, 187, 221);
 	box-shadow: 0 0 15px 8px rgba(0, 0, 0, 0.06);
 }
 
-.teletype-link:after {
-	position: absolute;
-	content: "";
-	width: 110%;
-	height: 110%;
-	background: linear-gradient(-142deg, rgb(224, 26, 255), rgb(247, 215, 55));
-	top: -5%;
-	left: -5%;
-	z-index: -1;
-	border-radius: 50%;
-}
-
 .teletype-link-image {
 	width: 100%;
-	border-radius: 50%;
+	border-radius: 14%;
 }
 
 .container {
@@ -255,50 +243,6 @@ input[type=search]::-webkit-search-cancel-button {
 	-webkit-appearance: searchfield-cancel-button;
 }
 
-.container ul {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-
-	align-items: center;
-	justify-content: space-evenly;
-
-	margin-bottom: 16px;
-	list-style-type: none;
-}
-
-.container ul li a img {
-	display: flex;
-	aspect-ratio: 1 / 1;
-	height: calc(100% - 16px);
-	max-width: 25%;
-	border-radius: 100%;
-	transition: .6s ease-in-out;
-}
-
-.container ul li a img:hover {
-	transform: scale(1.1);
-}
-
-.container ul li {
-	margin-right: 20px;
-}
-
-.container ul li a {
-	display: block;
-	background-color: white;
-	padding: 4px;
-	border-radius: 100%;
-}
-
-.outer-layer {
-	position: relative;
-	background: linear-gradient(45deg, gold, fuchsia);
-	padding: 4px;
-	border-radius: 100%;
-}
-
-
 .inputbox.transition {
 	width: 70%;
 	box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
@@ -306,7 +250,7 @@ input[type=search]::-webkit-search-cancel-button {
 }
 
 .wideinputbox.transition {
-	width: 57px;
+	width: 70%;
 	box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 	transition: 0.2s linear;
 }
