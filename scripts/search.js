@@ -59,14 +59,13 @@ function loadSearchHTMLTable(data) {
 
     }
     done = 0;
-    if(doning == 1){
+    if (doning == 1) {
         window.scrollTo(0, document.body.scrollHeight);
         doning = 0;
     }
 }
 
-
-function resetsearch(){
+function resetsearch() {
     searchValue = document.querySelector('#search-input').value;
     page = new URLSearchParams(window.location.search).get("page");
     doning = 1;
@@ -81,12 +80,11 @@ function resetsearch(){
         .then(data => loadSearchHTMLTable(data['data']));
 }
 
-
 document.addEventListener('DOMContentLoaded', preload());
 
-function preload(){
+function preload() {
     searchValue = document.querySelector('#search-input').value;
-    if(searchValue.length != 0){
+    if (searchValue.length != 0) {
         resetsearch();
     }
 }

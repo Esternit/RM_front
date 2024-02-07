@@ -13,7 +13,7 @@ function loadSearchHTMLTable(data) {
     const ROOT_PRODUCTS = document.getElementById('listing');
     if (data.length > 0) {
         let catalog = '';
-        
+
         data.forEach(({ img, title, start_price, id }) => {
             catalog += `
             <div class="card" id="${id}">
@@ -73,12 +73,12 @@ function searchfunc() {
 
 function loader() {
     search = 0;
-    params=new URLSearchParams(window.location.search);
+    params = new URLSearchParams(window.location.search);
     const cookieValue = params.get('page');
     console.log(cookieValue);
-    if(doning == 1 || cookieValue == null){
+    if (doning == 1 || cookieValue == null) {
         console.log("here");
-        
+
         fetch('https://rmstoreapi-production.up.railway.app/getAll', {
             headers: {
                 'Content-type': 'application/json'
@@ -89,10 +89,10 @@ function loader() {
             .then(response => response.json())
             .then(data => loadHTMLTable(data['data']));
     }
-    else{
-        
-        
-        console.log(cookieValue,doning);
+    else {
+
+
+        console.log(cookieValue, doning);
         fetch('https://rmstoreapi-production.up.railway.app/getAllDataFromStart', {
             headers: {
                 'Content-type': 'application/json'
@@ -109,7 +109,7 @@ function loader() {
 document.addEventListener('DOMContentLoaded', loader());
 
 function loadHTMLTable(data) {
-    
+
 
     if (data.length > 0) {
         let catalog = '';
@@ -143,14 +143,14 @@ function loadHTMLTable(data) {
 
     }
     done = 0;
-    params=new URLSearchParams(window.location.search);
+    params = new URLSearchParams(window.location.search);
     const spuds = params.get('spuds');
 
-    if(doning == 0){
-        if(spuds != null){
+    if (doning == 0) {
+        if (spuds != null) {
             window.scrollTo(0, document.body.scrollHeight);
         }
-        
+
         doning = 1;
     }
     tg.MainButton.hide();
@@ -167,16 +167,14 @@ document.addEventListener('touchstart', function (e) {
     }
 }, false);
 
-
 function myFunction() {
-    
+
     tg.openLink("https://rmpoizon.store");
     console.log("opened");
 }
 
-
 function myFunction2() {
-    
+
     tg.openTelegramLink("https://t.me/pavtoko");
     console.log("opened");
 }
@@ -189,9 +187,9 @@ function showLoading() {
         loading.classList.remove('show');
         setTimeout(() => {
             page++;
-            
+
             loader();
-            
+
 
         }, 300);
     }, 1000);
