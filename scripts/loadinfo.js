@@ -39,15 +39,22 @@ document.addEventListener('DOMContentLoaded', function () {
     })
         .then(response => response.json())
         .then(data => loadHTMLTable(data['data']));
+
 });
 
 function loadHTMLTable(data) {
-
     const outData = data['base'];
     const innerData = data['sizes']
-    const html = `
-    <img src = "${outData[0]["img"]}" class="image"> 
+    let html = `
+    <div id="itemCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <div class="carousel-control-prev" href="#itemCarousel" role="button" data-slide="prev"></div>
+        <div class="carousel-inner">
+    `+ fillCarousel(data) + `
+        </div>
+        <div class="carousel-control-next" href="#itemCarousel" role="button" data-slide="next"></div>
+    </div>
     `;
+
     const ROOT_SIZIING = document.getElementById('sizing');
     const ROOT_PRODUCTS = document.getElementById('usercard');
 
@@ -82,6 +89,52 @@ function loadHTMLTable(data) {
     ROOT_PRODUCTS.innerHTML = html;
     const ROOT_NAME = document.getElementById('naming');
     ROOT_NAME.innerText = outData[0]["title"];
+
+    enableCarouselSwiping();
+}
+
+function fillCarousel(data) {
+    let carouselItems = `
+        <div class="carousel-item active">
+            <img src="${data['base'][0]["img"]}" class="image">
+        </div>
+    `;
+
+    for (let i = 0; i < data["images"].length; i++) {
+        carouselItems += `
+        <div class="carousel-item">
+            <img src="${data["images"][i].image}" alt="" class="d-block image">
+        </div>
+        `;
+    }
+
+    return carouselItems;
+}
+
+function enableCarouselSwiping() {
+    const itmCar = document.querySelector("#itemCarousel");
+    itmCar.addEventListener('touchstart', moveSlideByTouch);
+}
+
+function moveSlideByTouch(event) {
+    const xClick = event.touches[0].pageX;
+    console.log($(".carousel"));
+
+    $(".carousel").one('touchmove', function (event) {
+        const xMove = event.originalEvent.touches[0].pageX;
+        const sensitivityInPx = 5;
+        console.log("here111");
+
+        if (Math.floor(xClick - xMove) > sensitivityInPx) {
+            $(".carousel").find(".carousel-control-next").click();
+        } else if (Math.floor(xClick - xMove) < -sensitivityInPx) {
+            $(".carousel").find(".carousel-control-prev").click();
+        }
+    });
+
+    $(".carousel").on('touchend', function () {
+        $(".carousel").off('touchmove');
+    });
 }
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
