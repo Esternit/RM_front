@@ -10,7 +10,7 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
 	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;800&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800&display=swap');
 	</style>
 
 	<title>Catalog</title>
@@ -19,33 +19,115 @@
 <body>
 
 	<div class="container">
+		<div class="pre-search-link-cont">
+			<a class="link-item-not-found" href="">Не нашёл нужный товар?🤔</a>
+			<a class="link-tg-channel" href="">
+				<img class="tg-icon" src="./assets/telegram.svg">
+				<div class="tg-channel-id">@hypekickspoizon</div>
+				<div class="tg-channel-text">Наш Telegram канал</div>
+			</a>
+		</div>
+
 		<div class="searchcont" id="searcher">
 		</div>
 
 		<div class="link-container">
-
 			<div class="teletype-info">
-				<a href="#" class="teletype-link" onclick="myFunction2()"><img class="teletype-link-image"
-						src="./logo.jpg"></a>
+				<a href="#" class="teletype-link" onclick="myFunction2()">
+					<div class="logo-img-cont">
+						<img class="logo-img-bg" src="./assets/about_us_bg.svg">
+					</div>
+					<img class="logo-img-fg" src="./assets/about_us_logo.svg">
+				</a>
 			</div>
 			<div class="teletype-info">
-				<a href="#" class="teletype-link" onclick="myFunction()"><img class="teletype-link-image"
-						src="./logo.jpg"></a>
+				<a href="#" class="teletype-link" onclick="myFunction()">
+					<div class="logo-img-cont">
+						<img class="logo-img-bg" src="./assets/delivery_bg.svg">
+					</div>
+					<img class="logo-img-fg" src="./assets/delivery_logo.svg">
+				</a>
 			</div>
 			<div class="teletype-info">
-				<a href="search.html" class="teletype-link"><img class="teletype-link-image" src="./logo.jpg"></a>
+				<a href="search.html" class="teletype-link">
+					<div class="logo-img-cont">
+						<img class="logo-img-bg" src="./assets/faq_bg.svg">
+					</div>
+					<img class="logo-img-fg" src="./assets/faq_logo.svg">
+				</a>
 			</div>
 			<div class="teletype-info">
-				<a href="" class="teletype-link"><img class="teletype-link-image" src="./logo.jpg"></a>
+				<a href="" class="teletype-link">
+					<div class="logo-img-cont">
+						<img class="logo-img-bg" src="./assets/contacts_bg.svg">
+					</div>
+					<img class="logo-img-fg" src="./assets/contacts_logo.svg">
+				</a>
 			</div>
 			<div class="teletype-info-text">О нас</div>
 			<div class="teletype-info-text">Доставка</div>
 			<div class="teletype-info-text">FAQ</div>
 			<div class="teletype-info-text">Контакты</div>
 		</div>
-		<div id="listing">
 
+		<div class="other-link-container">
+			<a href="#" class="other-link" id="blog-link">
+				<img class="link-img" src="./assets/blog.png">
+				<p class="other-link-text">Блог</p>
+			</a>
+			<a href="#" class="other-link" id="new-stuff-link">
+				<img class="link-img" src="./assets/new_stuff.png">
+				<p class="other-link-text">Новинки</p>
+			</a>
+			<a href="#" class="other-link" id="season-top-link">
+				<img class="link-img" src="./assets/season_top.png">
+				<p class="other-link-text">Топ сезона</p>
+			</a>
 		</div>
+
+		<p id="brand-title">Бренды</p>
+		<div class="brand-container">
+			<a href="" class="brand-logo">
+				<div class="logo-img-cont">
+					<img class="logo-img-bg" src="./assets/vans_bg.svg">
+				</div>
+				<img class="logo-img-fg" src="./assets/vans_logo.svg">
+			</a>
+			<a href="" class="brand-logo">
+				<div class="logo-img-cont">
+					<img class="logo-img-bg" src="./assets/adidas_bg.svg">
+				</div>
+				<img class="logo-img-fg" src="./assets/adidas_logo.svg">
+			</a>
+			<a href="" class="brand-logo">
+				<div class="logo-img-cont">
+					<img class="logo-img-bg" src="./assets/new_balance_bg.svg">
+				</div>
+				<img class="logo-img-fg" src="./assets/new_balance_logo.svg">
+			</a>
+			<a href="" class="brand-logo">
+				<div class="logo-img-cont">
+					<img class="logo-img-bg" src="./assets/nike_bg.svg">
+				</div>
+				<img class="logo-img-fg" src="./assets/nike_logo.svg">
+			</a>
+			<a href="" class="brand-logo">
+				<div class="logo-img-cont">
+					<img class="logo-img-bg" src="./assets/jordan_bg.svg">
+				</div>
+				<img class="logo-img-fg" src="./assets/jordan_logo.svg">
+			</a>
+			<a href="" class="brand-logo">
+				<div class="logo-img-cont">
+					<img class="logo-img-bg" src="./assets/old_order_bg.svg">
+				</div>
+				<img class="logo-img-fg" src="./assets/old_order_logo.svg">
+			</a>
+		</div>
+	</div>
+
+	<div id="listing">
+
 	</div>
 
 	<div class="loader" id="ld">
