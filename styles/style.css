@@ -22,13 +22,18 @@ body {
 }
 
 .teletype-info {
+	display: flex;
+	flex: 0 1 25%;
+
 	aspect-ratio: 1 / 1;
 	height: calc(100% - 32px);
-	max-width: 25%;
+
+	align-items: center;
+	justify-content: center;
 }
 
 .teletype-info-text {
-	height: fit-content;
+	flex: 0 1 25%;
 
 	text-align: center;
 	font-family: 'Montserrat', sans-serif;
@@ -36,32 +41,34 @@ body {
 	font-size: 14px;
 }
 
-.teletype-info,
-.teletype-info-text {
-	flex: 0 1 25%;
+.teletype-link {
+	display: flex;
+	position: relative;
+
+	aspect-ratio: 1 / 1;
+	height: inherit;
 
 	align-items: center;
 	justify-content: center;
 	text-align: center;
 }
 
-.teletype-link {
+.img-bg-cont {
 	display: inline-block;
-	flex-shrink: inherit;
 	position: relative;
+	width: 100%;
+}
 
-	aspect-ratio: 1 / 1;
-	height: inherit;
-	max-height: inherit;
-
-	border-radius: 14%;
-	background: rgb(33, 187, 221);
-	box-shadow: 0 0 15px 8px rgba(0, 0, 0, 0.06);
+.teletype-link-image-bg {
+	display: block;
+	width: 100%;
 }
 
 .teletype-link-image {
+	position: absolute;
 	width: 100%;
-	border-radius: 14%;
+	z-index: 1;
+	right: 0%;
 }
 
 .container {
