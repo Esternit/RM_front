@@ -42,12 +42,16 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function loadHTMLTable(data) {
-
     const outData = data['base'];
     const innerData = data['sizes']
-    const html = `
-    <img src = "${outData[0]["img"]}" class="image"> 
+    let html = `
+    <div class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+    `+ fillCarousel(data) + `
+        </div>
+    </div>
     `;
+
     const ROOT_SIZIING = document.getElementById('sizing');
     const ROOT_PRODUCTS = document.getElementById('usercard');
 
@@ -82,6 +86,24 @@ function loadHTMLTable(data) {
     ROOT_PRODUCTS.innerHTML = html;
     const ROOT_NAME = document.getElementById('naming');
     ROOT_NAME.innerText = outData[0]["title"];
+}
+
+function fillCarousel(data) {
+    let carouselItems = `
+        <div class="carousel-item active">
+            <img src="${data['base'][0]["img"]}" class="image">
+        </div>
+    `;
+
+    for (let i = 0; i < data["images"].length; i++) {
+        carouselItems += `
+        <div class="carousel-item">
+            <img src="${data["images"][i].image}" alt="" class="d-block image">
+        </div>
+        `;
+    }
+
+    return carouselItems;
 }
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
