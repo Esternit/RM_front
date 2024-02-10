@@ -180,6 +180,10 @@ function openManager() {
     console.log("opened");
 }
 
+function openTeletype(line){
+    tg.openLink(line);
+}
+
 function showLoading() {
     loading.classList.add('show');
 
