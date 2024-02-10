@@ -119,3 +119,36 @@ body {
 .image {
     max-width: 100%;
 }
+
+.poizon-item-link {
+    width: 80%;
+    height: 50px;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    background-color: #FFFFFF;
+    border-color: #cccccc;
+    box-shadow: 0 0 10px 4px rgba(7, 100, 134, 0.10);
+
+    border-radius: 20px;
+    border-width: 1px;
+    border-style: solid;
+
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+button::-moz-focus-inner {
+    border: 0;
+}
+
+button:focus {
+    outline: none !important;
+}
+
+.poizon-item-link:active {
+    background-color: #FCFEFE;
+}
