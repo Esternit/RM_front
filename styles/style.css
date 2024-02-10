@@ -147,11 +147,14 @@ body {
 }
 
 .loader {
-	opacity: 0;
 	display: flex;
+	opacity: 0;
+
 	position: fixed;
 	bottom: 20px;
-	transition: opacity 0, 3s ease-in;
+	left: 50%;
+
+	transform: translate(-50%, -50%);
 }
 
 .loader.show {
