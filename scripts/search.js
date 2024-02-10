@@ -68,7 +68,14 @@ function loadSearchHTMLTable(data) {
 function resetsearch() {
     searchValue = document.querySelector('#search-input').value;
     page = new URLSearchParams(window.location.search).get("page");
-    doning = 1;
+    start = new URLSearchParams(window.location.search).get("start");
+    if(start == 1){
+        doning = 0;
+    }
+    else{
+        doning = 1;
+    }
+    
     fetch('https://rmstoreapi-production.up.railway.app/searchDataFromStart/' + searchValue, {
         headers: {
             'Content-type': 'application/json'
