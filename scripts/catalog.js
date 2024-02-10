@@ -75,9 +75,9 @@ function loader() {
     search = 0;
     params = new URLSearchParams(window.location.search);
     const cookieValue = params.get('page');
-    console.log(cookieValue);
+
     if (doning == 1 || cookieValue == null) {
-        console.log("here");
+
 
         fetch('https://rmstoreapi-production.up.railway.app/getAll', {
             headers: {
@@ -167,13 +167,14 @@ document.addEventListener('touchstart', function (e) {
     }
 }, false);
 
-function myFunction() {
+function openRM(){
 
-    tg.openLink("https://rmpoizon.store");
+    tg.openTelegramLink("https://t.me/resell_mafia");
+    /* tg.openLink("https://rmpoizon.store"); */
     console.log("opened");
 }
 
-function myFunction2() {
+function openManager() {
 
     tg.openTelegramLink("https://t.me/pavtoko");
     console.log("opened");

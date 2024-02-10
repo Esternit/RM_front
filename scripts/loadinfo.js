@@ -164,3 +164,10 @@ function backfunc() {
     }
 
 }
+
+function poizonOpener() {
+    const Id = new URLSearchParams(window.location.search).get('id');
+    let link = "https://m.dewu.com/router/product/ProductDetail?spuId=" +Id+"&sourceName=shareDetail&skuId=&fromUserId=048b9570ac482c65b6de33c0f386c0da&share_platform_title=7&outside_channel_type=0"
+    tg.openLink(link);
+    console.log("opened");
+}
