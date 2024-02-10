@@ -75,9 +75,9 @@ function loader() {
     search = 0;
     params = new URLSearchParams(window.location.search);
     const cookieValue = params.get('page');
-    console.log(cookieValue);
+
     if (doning == 1 || cookieValue == null) {
-        console.log("here");
+
 
         fetch('https://rmstoreapi-production.up.railway.app/getAll', {
             headers: {
