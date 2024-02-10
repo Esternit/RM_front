@@ -52,7 +52,15 @@ body {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+	transition: all .1s ease-in-out;
 }
+
+.teletype-link:active{
+	transform: scale(0.8);
+}
+
+
+
 
 .logo-img-bg {
 	display: block;
@@ -271,6 +279,15 @@ a:active {
 	height: 30px;
 
 	padding: 4px 4px 4px 4px;
+	transition: all .1s ease-in-out;
+}
+
+.link-tg-channel:active{
+	transform: scale(0.8);
+}
+
+.link-item-not-found:active{
+	transform: scale(0.8);
 }
 
 .link-item-not-found {
@@ -343,6 +360,11 @@ a:active {
 
 	justify-content: center;
 	text-align: center;
+	transition: all .1s ease-in-out;
+}
+
+.other-link:active{
+	transform: scale(0.8);
 }
 
 .link-img {
@@ -402,6 +424,11 @@ a:active {
 	justify-content: center;
 
 	margin-bottom: 20px;
+	transition: all .1s ease-in-out;
+}
+
+.brand-logo:active{
+	transform: scale(0.8);
 }
 
 .brand-fg {
