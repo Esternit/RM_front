@@ -267,8 +267,6 @@ a:active {
 
 	width: fit-content;
 	height: 30px;
-
-	padding: 4px 4px 4px 4px;
 }
 
 .link-item-not-found {
@@ -280,6 +278,8 @@ a:active {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 10px;
 	font-weight: 800;
+
+	padding: 4px 14px 4px 14px;
 }
 
 .link-tg-channel {
@@ -287,6 +287,8 @@ a:active {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
+
+	padding: 4px 4px 4px 4px;
 }
 
 .tg-icon {
