@@ -60,7 +60,9 @@ body {
 }
 
 .teletype-link:active{
+	background-color: white;
 	transform: scale(0.8);
+	
 }
 
 
