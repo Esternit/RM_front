@@ -43,5 +43,4 @@ function testFunc() {
         console.log(document.getElementById("search-input"));
     }
 }
-
 loadsearch();

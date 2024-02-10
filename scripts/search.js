@@ -33,14 +33,15 @@ function loadSearchHTMLTable(data) {
         searchValue = document.querySelector('#search-input').value;
         data.forEach(({ img, title, start_price, id }) => {
             catalog += `
-            <div class="card" id="${id}">
+
+            <a class="card" id="${id}" href="detail.html?id=${id}&page=${page}&search=${searchValue}" onclick="getPage()">
                 <div class="item">
                     <img src="${img}" alt="" class="img">
                 </div>
                 <div class="itemname">${title}</div>
                 <div class="price">${start_price} ₽</div>
-                <a class="btn" href="detail.html?id=${id}&page=${page}&search=${searchValue}">Заказать</a>
-            </div>
+                <div class="btn">Заказать</div>
+            </a>
             `;
             /* ₽ */
         });
