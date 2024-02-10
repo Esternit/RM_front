@@ -10,6 +10,10 @@ body {
 	background: rgb(246, 254, 255);
 }
 
+#listing {
+	margin-bottom: 60px;
+}
+
 .link-container {
 	display: flex;
 	flex-direction: row;
@@ -151,11 +155,14 @@ body {
 }
 
 .loader {
-	opacity: 0;
 	display: flex;
+	opacity: 0;
+
 	position: fixed;
-	bottom: 50px;
-	transition: opacity 0, 3s ease-in;
+	bottom: 20px;
+	left: 50%;
+
+	transform: translate(-50%, -50%);
 }
 
 .loader.show {
@@ -163,7 +170,7 @@ body {
 }
 
 .circle {
-	background-color: #fff;
+	background-color: #CCCCCC;
 	width: 10px;
 	height: 10px;
 	border-radius: 50%;
@@ -194,9 +201,7 @@ body {
 .search {
 	width: 100%;
 	padding: 10px;
-	margin-bottom: 20px;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 20px auto 15px auto;
 
 	display: flex;
 	justify-content: center;
@@ -299,6 +304,8 @@ a:active {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 10px;
 	font-weight: 800;
+
+	padding: 4px 14px 4px 14px;
 }
 
 .link-tg-channel {
@@ -306,6 +313,8 @@ a:active {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
+
+	padding: 4px 4px 4px 4px;
 }
 
 .tg-icon {
