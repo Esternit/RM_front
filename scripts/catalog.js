@@ -169,14 +169,14 @@ document.addEventListener('touchstart', function (e) {
 
 function openRM(){
 
-    tg.openTelegramLink("https://t.me/resell_mafia");
+    tg.openTelegramLink("https://t.me/hypekickspoizon");
     /* tg.openLink("https://rmpoizon.store"); */
     console.log("opened");
 }
 
 function openManager() {
 
-    tg.openTelegramLink("https://t.me/pavtoko");
+    tg.openTelegramLink("https://t.me/HKpozion");
     console.log("opened");
 }
 

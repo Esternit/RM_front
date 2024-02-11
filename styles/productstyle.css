@@ -24,8 +24,8 @@ body {
 #naming {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 200;
-    font-size: 32px;
+    font-weight: 400;
+    font-size: 26px;
 }
 
 .pricing-container,
@@ -101,11 +101,11 @@ body {
 
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 0.7em;
+    font-weight: 600;
+    font-size: 0.9em;
 
     background-color: rgb(33, 187, 221);
-
+    color: #FFFFFF;
     border: 1px solid rgb(33, 187, 221);
     border-radius: 18%;
 }
