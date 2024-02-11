@@ -30,8 +30,9 @@ function loadsearch() {
     setTimeout(() => {
         document.getElementById("search-input").classList.toggle('transition');
         if (window.location.href.indexOf("search.html") != -1){
-            document.getElementById("search-input").focus();
             document.getElementById("search-input").click();
+            setTimeout(function(){
+                document.getElementById("search-input").focus()},1)
         }
     }, 100);
     if (sh != null) {
