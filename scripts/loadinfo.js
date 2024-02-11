@@ -54,12 +54,11 @@ function loadHTMLTable(data) {
         <div class="carousel-control-next" href="#itemCarousel" role="button" data-slide="next"></div>
     </div>
     `;
-
     const ROOT_SIZIING = document.getElementById('sizing');
     const ROOT_PRODUCTS = document.getElementById('usercard');
 
     const PRICE = document.getElementById('price');
-    PRICE.innerText = innerData[0].price + " ₽";
+    PRICE.innerText = outData[0].start_price + " ₽";
 
     innerData.forEach(({ name_size, price }) => {
         let inner = document.createElement('div');
