@@ -18,23 +18,10 @@ function loadsearch() {
     let searcher = document.getElementById("searcher");
     let test = document.createElement("div");
     test.className = "search";
-    if (window.location.href.indexOf("search.html") != -1) {
-        test.innerHTML += `<input placeholder="Поиск по названию" id="search-input" class = "inputbox" oninput="searchfunc()"/>`;
-        
-        BackButton.show();
-    } else {
-        test.innerHTML += `<input placeholder="Поиск по названию" id="search-input" class = "wideinputbox" onclick = "testFunc()" />`;
-    }
+    test.innerHTML += `<input placeholder="Поиск по названию" id="search-input" class = "wideinputbox" oninput="searchfunc()" />`;
+    BackButton.show();
 
     searcher.appendChild(test);
-    setTimeout(() => {
-        document.getElementById("search-input").classList.toggle('transition');
-        if (window.location.href.indexOf("search.html") != -1){
-            document.getElementById("search-input").click();
-            setTimeout(function(){
-                document.getElementById("search-input").focus()},1)
-        }
-    }, 100);
     if (sh != null) {
         document.getElementById("search-input").value = sh;
 

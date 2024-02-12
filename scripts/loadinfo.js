@@ -17,7 +17,7 @@ BackButton.onClick(function () {
     const paging = new URLSearchParams(window.location.search).get('page');
     const sh = new URLSearchParams(window.location.search).get('search');
     if (sh != null) {
-        window.location.href = 'search.html?page=' + paging + "&spuds=" + Id + "&search=" + sh;
+        window.location.href = 'index.html?page=' + paging + "&spuds=" + Id + "&search=" + sh;
     }
     else {
         doning = 1;

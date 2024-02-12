@@ -13,17 +13,18 @@ function loadSearchHTMLTable(data) {
     const ROOT_PRODUCTS = document.getElementById('listing');
     if (data.length > 0) {
         let catalog = '';
-
+        searchValue = document.querySelector('#search-input').value;
         data.forEach(({ img, title, start_price, id }) => {
             catalog += `
-            <div class="card" id="${id}">
+
+            <a class="card" id="${id}" href="detail.html?id=${id}&page=${page}&search=${searchValue}" onclick="getPage()">
                 <div class="item">
                     <img src="${img}" alt="" class="img">
                 </div>
                 <div class="itemname">${title}</div>
                 <div class="price">${start_price} ₽</div>
-                <a class="btn" href="detail.html?id=${id}&page=${page}">Заказать</a>
-            </div>
+                <div class="btn">Заказать</div>
+            </a>
             `;
             /* ₽ */
         });
@@ -42,22 +43,21 @@ function loadSearchHTMLTable(data) {
 
     }
     done = 0;
+    console.log("here"+doning.toString());
+    if (search == 1) {
+        window.scrollTo(0, document.body.scrollHeight);
+        search = 0;
+    }
 }
-
 function searchfunc() {
     if (document.querySelector('#search-input') != null) {
         searchValue = document.querySelector('#search-input').value;
     }
-
+    console.log(searchValue);
     if (searchValue.length == 0) {
         page = 1;
-        loader();
     }
     else {
-        if (search == 0) {
-            page = 1;
-        }
-        search = 1;
         fetch('https://rmstoreapi-production.up.railway.app/search/' + searchValue, {
             headers: {
                 'Content-type': 'application/json'
@@ -184,6 +184,9 @@ function openTeletype(line){
     tg.openLink(line);
 }
 
+function openTGLink(link){
+    tg.openTelegramLink(link);
+}
 function showLoading() {
     loading.classList.add('show');
 
