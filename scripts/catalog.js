@@ -41,10 +41,10 @@ function loadSearchHTMLTable(data) {
     if (data.length > 0) {
         let catalog = '';
         searchValue = document.querySelector('#search-input').value;
-        data.forEach(({ img, title, start_price, id }) => {
+        data.forEach(({ img, title, start_price, spuId }) => {
             catalog += `
 
-            <a class="card" id="${id}" href="detail.html?id=${id}&page=${page}&search=${searchValue}" onclick="getPage()">
+            <a class="card" id="${spuId}" href="detail.html?id=${spuId}&page=${page}&search=${searchValue}" onclick="getPage()">
                 <div class="item">
                     <img src="${img}" alt="" class="img">
                 </div>
@@ -171,10 +171,10 @@ function loadHTMLTable(data) {
 
     if (data.length > 0) {
         let catalog = '';
-
-        data.forEach(({ img, title, start_price, id }) => {
+        console.log(data);
+        data.forEach(({ img, title, start_price, spuId }) => {
             catalog += `
-            <a class="card" id="${id}" href="detail.html?id=${id}&page=${page}" onclick="getPage()">
+            <a class="card" id="${spuId}" href="detail.html?id=${spuId}&page=${page}" onclick="getPage()">
                 <div class="item">
                     <img src="${img}" alt="" class="img">
                 </div>

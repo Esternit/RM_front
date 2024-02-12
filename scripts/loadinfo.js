@@ -30,7 +30,7 @@ BackButton.onClick(function () {
 
 document.addEventListener('DOMContentLoaded', function () {
     const Id = new URLSearchParams(window.location.search).get('id');
-    fetch('https://rmstoreapi-production.up.railway.app/getById', {
+    fetch('http://localhost:5000/getById', {
         headers: {
             'Content-type': 'application/json'
         },
@@ -74,7 +74,7 @@ function loadHTMLTable(data) {
                 title: outData[0]["title"],
                 pricing: price,
                 size_name: name_size,
-                id: outData[0]["id"],
+                id: outData[0]["spuId"],
                 img: outData[0]["img"]
             });
             tg.MainButton.setText("Перейти в чат с менеджером");
