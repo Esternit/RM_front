@@ -1,13 +1,39 @@
 let limit = 10;
 let page = 1;
-let amount = 1;
+let scrollneed = 0;
 let search = 0;
 let searchValue = "";
 let tg = window.Telegram.WebApp;
 let doning = 0;
+let timescalled = 0;
+var BackButton = window.Telegram.WebApp.BackButton;
+BackButton.onClick(function () {
+    window.location.href = 'index.html';
+
+    BackButton.hide();
+    tgk.MainButton.hide();
+});
 
 tg.expand();
 tg.MainButton.hide();
+
+function resetsearch() {
+    search = 1;
+    timescalled ++;
+    searchValue = new URLSearchParams(window.location.search).get("search");
+    page = new URLSearchParams(window.location.search).get("page");
+    scrollneed = 1;
+    fetch('https://rmstoreapi-production.up.railway.app/searchDataFromStart/' + searchValue, {
+        headers: {
+            'Content-type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify({ limiter: limit, paging: page })
+    })
+        .then(response => response.json())
+        .then(data => loadSearchHTMLTable(data['data']));
+}
+
 
 function loadSearchHTMLTable(data) {
     const ROOT_PRODUCTS = document.getElementById('listing');
@@ -43,22 +69,28 @@ function loadSearchHTMLTable(data) {
 
     }
     done = 0;
-    console.log("here"+doning.toString());
-    if (search == 1) {
-        window.scrollTo(0, document.body.scrollHeight);
-        search = 0;
-        done = 1;
-    }
 }
+
 function searchfunc() {
+    search = 1;
+    BackButton.show();
+    timescalled ++;
     if (document.querySelector('#search-input') != null) {
         searchValue = document.querySelector('#search-input').value;
     }
-    console.log(searchValue);
+    console.log(searchValue,timescalled);
     if (searchValue.length == 0) {
+        console.log("here");
         page = 1;
+        search = 0;
+        timescalled = 0;
+        window.location.href="index.html";
     }
     else {
+        if(timescalled == 1){
+            page = 1;
+        }
+        console.log(page);
         fetch('https://rmstoreapi-production.up.railway.app/search/' + searchValue, {
             headers: {
                 'Content-type': 'application/json'
@@ -72,29 +104,23 @@ function searchfunc() {
 
 }
 
+
+
 function loader() {
     params = new URLSearchParams(window.location.search);
     const cookieValue = params.get('page');
     const searchinfo = params.get("search");
-    if(searchinfo != null){
-        search = 1;
-        fetch('https://rmstoreapi-production.up.railway.app/searchDataFromStart/' + searchinfo, {
-            headers: {
-                'Content-type': 'application/json'
-            },
-            method: 'POST',
-            body: JSON.stringify({ limiter: limit, paging: page })
-        })
-            .then(response => response.json())
-            .then(data => loadSearchHTMLTable(data['data']));
+    console.log(searchinfo);
+    if(searchinfo != null && search == 0){
+        resetsearch();
     }
-    else{
-        search = 0;
 
+    
+    else{
 
         if (doning == 1 || cookieValue == null) {
-    
-    
+
+
             fetch('https://rmstoreapi-production.up.railway.app/getAll', {
                 headers: {
                     'Content-type': 'application/json'
@@ -121,6 +147,8 @@ function loader() {
         }
     }
 
+    
+
 
 }
 
@@ -143,7 +171,6 @@ function loadHTMLTable(data) {
                 <div class="btn">Заказать</div>
             </a>
             `;
-            amount++;
         });
         const html = `
         <div class="inner">
@@ -212,11 +239,15 @@ function showLoading() {
     setTimeout(() => {
         loading.classList.remove('show');
         setTimeout(() => {
+
             page++;
-
-            loader();
-
-
+            if(search == 0){
+                console.log("loader");
+                loader();
+            }
+            else{
+                searchfunc();
+            }
         }, 300);
     }, 1000);
 }
@@ -227,9 +258,6 @@ window.addEventListener('scroll', () => {
     if (scrollTop + clientHeight >= scrollHeight - 30) {
         if(done == 0){
             showLoading();
-        }
-        else if (search == 1){
-            done = 0;
         }
     }
 });

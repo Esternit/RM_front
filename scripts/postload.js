@@ -19,7 +19,7 @@ function loadsearch() {
     let test = document.createElement("div");
     test.className = "search";
     test.innerHTML += `<input placeholder="Поиск по названию" id="search-input" class = "wideinputbox" oninput="searchfunc()" />`;
-    BackButton.show();
+
 
     searcher.appendChild(test);
     if (sh != null) {
