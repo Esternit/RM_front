@@ -5,6 +5,7 @@ let search = 0;
 let searchValue = "";
 let tg = window.Telegram.WebApp;
 let doning = 0;
+let doningsearch = 0;
 let timescalled = 0;
 var BackButton = window.Telegram.WebApp.BackButton;
 BackButton.onClick(function () {
@@ -69,6 +70,17 @@ function loadSearchHTMLTable(data) {
 
     }
     done = 0;
+    let iD = new URLSearchParams(window.location.search).get("spuds");
+    if (iD != null){
+        let y= document.getElementById(iD).getBoundingClientRect().top;
+        if(doningsearch == 0){
+            window.scrollTo(0, y);
+            doningsearch = 1
+        }
+    }
+
+    
+
 }
 
 function searchfunc() {
@@ -193,7 +205,8 @@ function loadHTMLTable(data) {
 
     if (doning == 0) {
         if (spuds != null) {
-            window.scrollTo(0, document.body.scrollHeight);
+            let y= document.getElementById(spuds).getBoundingClientRect().top;
+            window.scrollTo(0, y);
         }
 
         doning = 1;
