@@ -170,3 +170,19 @@ function poizonOpener() {
     tg.openLink(link);
     console.log("opened");
 }
+
+function testfunc(){
+    const Id = new URLSearchParams(window.location.search).get('id');
+    const paging = new URLSearchParams(window.location.search).get('page');
+    const sh = new URLSearchParams(window.location.search).get('search');
+    if (sh != null) {
+        window.location.href = 'index.html?page=' + paging + "&spuds=" + Id + "&search=" + sh;
+    }
+    else {
+        doning = 1;
+        window.location.href = 'index.html?page=' + paging + "&spuds=" + Id;
+    }
+
+    BackButton.hide();
+    tg.MainButton.hide();
+}

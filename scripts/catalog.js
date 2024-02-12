@@ -47,6 +47,7 @@ function loadSearchHTMLTable(data) {
     if (search == 1) {
         window.scrollTo(0, document.body.scrollHeight);
         search = 0;
+        done = 1;
     }
 }
 function searchfunc() {
@@ -223,7 +224,12 @@ function showLoading() {
 window.addEventListener('scroll', () => {
 
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-    if (scrollTop + clientHeight >= scrollHeight - 30 && done == 0) {
-        showLoading();
+    if (scrollTop + clientHeight >= scrollHeight - 30) {
+        if(done == 0){
+            showLoading();
+        }
+        else if (search == 1){
+            done = 0;
+        }
     }
 });
