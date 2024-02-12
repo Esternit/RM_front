@@ -72,14 +72,12 @@ function searchfunc() {
 }
 
 function loader() {
-    search = 0;
     params = new URLSearchParams(window.location.search);
     const cookieValue = params.get('page');
-
-    if (doning == 1 || cookieValue == null) {
-
-
-        fetch('https://rmstoreapi-production.up.railway.app/getAll', {
+    const searchinfo = params.get("search");
+    if(searchinfo != null){
+        search = 1;
+        fetch('https://rmstoreapi-production.up.railway.app/searchDataFromStart/' + searchinfo, {
             headers: {
                 'Content-type': 'application/json'
             },
@@ -87,22 +85,41 @@ function loader() {
             body: JSON.stringify({ limiter: limit, paging: page })
         })
             .then(response => response.json())
-            .then(data => loadHTMLTable(data['data']));
+            .then(data => loadSearchHTMLTable(data['data']));
     }
-    else {
+    else{
+        search = 0;
 
 
-        console.log(cookieValue, doning);
-        fetch('https://rmstoreapi-production.up.railway.app/getAllDataFromStart', {
-            headers: {
-                'Content-type': 'application/json'
-            },
-            method: 'POST',
-            body: JSON.stringify({ limiter: limit, paging: cookieValue })
-        })
-            .then(response => response.json())
-            .then(data => loadHTMLTable(data['data']));
+        if (doning == 1 || cookieValue == null) {
+    
+    
+            fetch('https://rmstoreapi-production.up.railway.app/getAll', {
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                method: 'POST',
+                body: JSON.stringify({ limiter: limit, paging: page })
+            })
+                .then(response => response.json())
+                .then(data => loadHTMLTable(data['data']));
+        }
+        else {
+    
+    
+            console.log(cookieValue, doning);
+            fetch('https://rmstoreapi-production.up.railway.app/getAllDataFromStart', {
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                method: 'POST',
+                body: JSON.stringify({ limiter: limit, paging: cookieValue })
+            })
+                .then(response => response.json())
+                .then(data => loadHTMLTable(data['data']));
+        }
     }
+
 
 }
 
