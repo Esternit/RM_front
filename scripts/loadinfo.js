@@ -75,7 +75,8 @@ function loadHTMLTable(data) {
                 pricing: price,
                 size_name: name_size,
                 id: outData[0]["spuId"],
-                img: outData[0]["img"]
+                img: outData[0]["img"],
+                article: outData[0]["article"]
             });
             tg.MainButton.setText("Перейти в чат с менеджером");
             tg.MainButton.show();
