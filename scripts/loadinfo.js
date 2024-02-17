@@ -21,7 +21,7 @@ BackButton.onClick(function () {
     }
     else {
         doning = 1;
-        window.location.href = 'search.html?page=' + paging + "&spuds=" + Id;
+        window.location.href = 'index.html?page=' + paging + "&spuds=" + Id;
     }
 
     BackButton.hide();
