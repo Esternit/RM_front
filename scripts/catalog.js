@@ -84,34 +84,9 @@ function loadSearchHTMLTable(data) {
 }
 
 function searchfunc() {
-    search = 1;
-    BackButton.show();
-    timescalled ++;
     if (document.querySelector('#search-input') != null) {
         searchValue = document.querySelector('#search-input').value;
-    }
-    console.log(searchValue,timescalled);
-    if (searchValue.length == 0) {
-        console.log("here");
-        page = 1;
-        search = 0;
-        timescalled = 0;
-        window.location.href="index.html";
-    }
-    else {
-        if(timescalled == 1){
-            page = 1;
-        }
-        console.log(page);
-        fetch('https://rmstoreapi-production.up.railway.app/search/' + searchValue, {
-            headers: {
-                'Content-type': 'application/json'
-            },
-            method: 'POST',
-            body: JSON.stringify({ limiter: limit, paging: page })
-        })
-            .then(response => response.json())
-            .then(data => loadSearchHTMLTable(data['data']));
+        window.location.href="search.html?search="+searchValue
     }
 
 }
@@ -119,6 +94,7 @@ function searchfunc() {
 
 
 function loader() {
+    BackButton.hide();
     params = new URLSearchParams(window.location.search);
     const cookieValue = params.get('page');
     const searchinfo = params.get("search");
