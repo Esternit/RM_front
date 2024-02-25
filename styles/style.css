@@ -59,14 +59,11 @@ body {
 	transition: all .1s ease-in-out;
 }
 
-.teletype-link:active{
+.teletype-link:active {
 	background-color: white;
 	transform: scale(0.8);
-	
+
 }
-
-
-
 
 .logo-img-bg {
 	display: block;
@@ -289,11 +286,11 @@ a:active {
 	transition: all .1s ease-in-out;
 }
 
-.link-tg-channel:active{
+.link-tg-channel:active {
 	transform: scale(0.8);
 }
 
-.link-item-not-found:active{
+.link-item-not-found:active {
 	transform: scale(0.8);
 }
 
@@ -374,7 +371,7 @@ a:active {
 	transition: all .1s ease-in-out;
 }
 
-.other-link:active{
+.other-link:active {
 	transform: scale(0.8);
 }
 
@@ -419,7 +416,7 @@ a:active {
 .brand-container {
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 
 	align-items: center;
 	justify-content: space-evenly;
@@ -438,7 +435,7 @@ a:active {
 	transition: all .1s ease-in-out;
 }
 
-.brand-logo:active{
+.brand-logo:active {
 	transform: scale(0.8);
 }
 
@@ -447,7 +444,7 @@ a:active {
 	right: 5%;
 }
 
-.search-btn{
+.search-btn {
 	background: none;
 	border-color: none;
 	border-radius: 20px;
@@ -458,12 +455,13 @@ a:active {
 	padding: 0;
 }
 
-.icon-search{
+.icon-search {
 	width: 100%;
 	height: 100%;
-	color:rgb(33, 187, 221);
+	color: rgb(33, 187, 221);
 }
-.search-btn:active{
-	transform: scale(0.95); 
-	
+
+.search-btn:active {
+	transform: scale(0.95);
+
 }

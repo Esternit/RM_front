@@ -143,8 +143,6 @@ function loader() {
 document.addEventListener('DOMContentLoaded', loader());
 
 function loadHTMLTable(data) {
-
-
     if (data.length > 0) {
         let catalog = '';
         console.log(data);
@@ -188,6 +186,34 @@ function loadHTMLTable(data) {
         doning = 1;
     }
     tg.MainButton.hide();
+
+    enableCarouselSwiping();
+}
+
+function enableCarouselSwiping() {
+    const itmCar = document.querySelector("#brandCarousel");
+    itmCar.addEventListener('touchstart', moveSlideByTouch);
+}
+
+function moveSlideByTouch(event) {
+    const xClick = event.touches[0].pageX;
+    console.log($(".carousel"));
+
+    $(".carousel").one('touchmove', function (event) {
+        const xMove = event.originalEvent.touches[0].pageX;
+        const sensitivityInPx = 5;
+        console.log("here111");
+
+        if (Math.floor(xClick - xMove) > sensitivityInPx) {
+            $(".carousel").find(".carousel-control-next").click();
+        } else if (Math.floor(xClick - xMove) < -sensitivityInPx) {
+            $(".carousel").find(".carousel-control-prev").click();
+        }
+    });
+
+    $(".carousel").on('touchend', function () {
+        $(".carousel").off('touchmove');
+    });
 }
 
 function isTextInput(node) {
