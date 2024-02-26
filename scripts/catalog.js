@@ -20,7 +20,7 @@ tg.MainButton.hide();
 
 function resetsearch() {
     search = 1;
-    timescalled ++;
+    timescalled++;
     searchValue = new URLSearchParams(window.location.search).get("search");
     page = new URLSearchParams(window.location.search).get("page");
     scrollneed = 1;
@@ -44,7 +44,7 @@ function loadSearchHTMLTable(data) {
         data.forEach(({ img, title, start_price, spuId }) => {
             catalog += `
 
-            <a class="card" id="${spuId}" href="detail.html?id=${spuId}&page=${page}&search=${searchValue}" onclick="getPage()">
+            <a class="product-card" id="${spuId}" href="detail.html?id=${spuId}&page=${page}&search=${searchValue}" onclick="getPage()">
                 <div class="item">
                     <img src="${img}" alt="" class="img">
                 </div>
@@ -71,22 +71,22 @@ function loadSearchHTMLTable(data) {
     }
     done = 0;
     let iD = new URLSearchParams(window.location.search).get("spuds");
-    if (iD != null){
-        let y= document.getElementById(iD).getBoundingClientRect().top;
-        if(doningsearch == 0){
+    if (iD != null) {
+        let y = document.getElementById(iD).getBoundingClientRect().top;
+        if (doningsearch == 0) {
             window.scrollTo(0, y);
             doningsearch = 1
         }
     }
 
-    
+
 
 }
 
 function searchfunc() {
     if (document.querySelector('#search-input') != null) {
         searchValue = document.querySelector('#search-input').value;
-        window.location.href="search.html?search="+searchValue
+        window.location.href = "search.html?search=" + searchValue
     }
 
 }
@@ -99,12 +99,12 @@ function loader() {
     const cookieValue = params.get('page');
     const searchinfo = params.get("search");
     console.log(searchinfo);
-    if(searchinfo != null && search == 0){
+    if (searchinfo != null && search == 0) {
         resetsearch();
     }
 
-    
-    else{
+
+    else {
 
         if (doning == 1 || cookieValue == null) {
 
@@ -114,28 +114,28 @@ function loader() {
                     'Content-type': 'application/json'
                 },
                 method: 'POST',
-                body: JSON.stringify({ limiter: limit, paging: page , store: "RM"})
+                body: JSON.stringify({ limiter: limit, paging: page, store: "RM" })
             })
                 .then(response => response.json())
                 .then(data => loadHTMLTable(data['data']));
         }
         else {
-    
-    
+
+
             console.log(cookieValue, doning);
             fetch('https://rmstoreapi-production.up.railway.app/getAllDataFromStart', {
                 headers: {
                     'Content-type': 'application/json'
                 },
                 method: 'POST',
-                body: JSON.stringify({ limiter: limit, paging: cookieValue , store: "RM"})
+                body: JSON.stringify({ limiter: limit, paging: cookieValue, store: "RM" })
             })
                 .then(response => response.json())
                 .then(data => loadHTMLTable(data['data']));
         }
     }
 
-    
+
 
 
 }
@@ -143,14 +143,12 @@ function loader() {
 document.addEventListener('DOMContentLoaded', loader());
 
 function loadHTMLTable(data) {
-
-
     if (data.length > 0) {
         let catalog = '';
         console.log(data);
         data.forEach(({ img, title, start_price, spuId }) => {
             catalog += `
-            <a class="card" id="${spuId}" href="detail.html?id=${spuId}&page=${page}" onclick="getPage()">
+            <a class="product-card" id="${spuId}" href="detail.html?id=${spuId}&page=${page}" onclick="getPage()">
                 <div class="item">
                     <img src="${img}" alt="" class="img">
                 </div>
@@ -181,13 +179,41 @@ function loadHTMLTable(data) {
 
     if (doning == 0) {
         if (spuds != null) {
-            let y= document.getElementById(spuds).getBoundingClientRect().top;
+            let y = document.getElementById(spuds).getBoundingClientRect().top;
             window.scrollTo(0, y);
         }
 
         doning = 1;
     }
     tg.MainButton.hide();
+
+    enableCarouselSwiping();
+}
+
+function enableCarouselSwiping() {
+    const itmCar = document.querySelector("#brandCarousel");
+    itmCar.addEventListener('touchstart', moveSlideByTouch);
+}
+
+function moveSlideByTouch(event) {
+    const xClick = event.touches[0].pageX;
+    console.log($(".carousel"));
+
+    $(".carousel").one('touchmove', function (event) {
+        const xMove = event.originalEvent.touches[0].pageX;
+        const sensitivityInPx = 5;
+        console.log("here111");
+
+        if (Math.floor(xClick - xMove) > sensitivityInPx) {
+            $(".carousel").find(".carousel-control-next").click();
+        } else if (Math.floor(xClick - xMove) < -sensitivityInPx) {
+            $(".carousel").find(".carousel-control-prev").click();
+        }
+    });
+
+    $(".carousel").on('touchend', function () {
+        $(".carousel").off('touchmove');
+    });
 }
 
 function isTextInput(node) {
@@ -201,7 +227,7 @@ document.addEventListener('touchstart', function (e) {
     }
 }, false);
 
-function openRM(){
+function openRM() {
 
     tg.openTelegramLink("https://t.me/hypekickspoizon");
     /* tg.openLink("https://rmpoizon.store"); */
@@ -214,11 +240,11 @@ function openManager() {
     console.log("opened");
 }
 
-function openTeletype(line){
+function openTeletype(line) {
     tg.openLink(line);
 }
 
-function openTGLink(link){
+function openTGLink(link) {
     tg.openTelegramLink(link);
 }
 function showLoading() {
@@ -230,11 +256,11 @@ function showLoading() {
         setTimeout(() => {
 
             page++;
-            if(search == 0){
+            if (search == 0) {
                 console.log("loader");
                 loader();
             }
-            else{
+            else {
                 searchfunc();
             }
         }, 300);
@@ -245,7 +271,7 @@ window.addEventListener('scroll', () => {
 
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
     if (scrollTop + clientHeight >= scrollHeight - 30) {
-        if(done == 0){
+        if (done == 0) {
             showLoading();
         }
     }

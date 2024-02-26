@@ -34,7 +34,7 @@ function loadSearchHTMLTable(data) {
         data.forEach(({ img, title, start_price, id }) => {
             catalog += `
 
-            <a class="card" id="${id}" href="detail.html?id=${id}&page=${page}&search=${searchValue}" onclick="getPage()">
+            <a class="product-card" id="${id}" href="detail.html?id=${id}&page=${page}&search=${searchValue}" onclick="getPage()">
                 <div class="item">
                     <img src="${img}" alt="" class="img">
                 </div>
@@ -70,19 +70,19 @@ function resetsearch() {
     searchValue = document.querySelector('#search-input').value;
     page = new URLSearchParams(window.location.search).get("page");
     start = new URLSearchParams(window.location.search).get("start");
-    if(start == 1){
+    if (start == 1) {
         doning = 0;
     }
-    else{
+    else {
         doning = 1;
     }
-    
+
     fetch('https://rmstoreapi-production.up.railway.app/searchDataFromStart/' + searchValue, {
         headers: {
             'Content-type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ limiter: limit, paging: page , store: "RM"})
+        body: JSON.stringify({ limiter: limit, paging: page, store: "RM" })
     })
         .then(response => response.json())
         .then(data => loadSearchHTMLTable(data['data']));
