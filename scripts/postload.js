@@ -17,7 +17,7 @@ function loadsearch() {
     const sh = new URLSearchParams(window.location.search).get('search');
     let searcher = document.getElementById("searcher");
     let test = document.createElement("div");
-    test.className = "search";
+    test.className = "product-search";
     test.innerHTML += `<input placeholder="Поиск по названию" id="search-input" class = "wideinputbox"  />`;
     test.innerHTML +=`<div class = "search-btn" onclick="searchfunc()"><ion-icon name="arrow-forward-circle-outline" class = "icon-search"></ion-icon></div>`
 

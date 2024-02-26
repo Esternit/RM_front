@@ -70,7 +70,7 @@ body {
 	width: 100%;
 }
 
-.container {
+.catalog-container {
 	margin: 0px 6px 0px 6px;
 }
 
@@ -86,7 +86,7 @@ body {
 	align-self: center;
 }
 
-.card {
+.product-card {
 	border-radius: 20px;
 	background-color: white;
 	box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
@@ -197,7 +197,7 @@ body {
 	}
 }
 
-.search {
+.product-search {
 	width: 100%;
 	padding: 10px;
 	margin: 20px auto 15px auto;
@@ -380,6 +380,7 @@ a:active {
 }
 
 .other-link-text {
+	color: #000000;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 18px;
 	font-weight: 800;
@@ -464,4 +465,17 @@ a:active {
 .search-btn:active {
 	transform: scale(0.95);
 
+}
+
+* {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+*:before,
+*:after {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
 }

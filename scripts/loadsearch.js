@@ -19,7 +19,7 @@ function loadsearch() {
     const trypage = new URLSearchParams(window.location.search).get('page');
     let searcher = document.getElementById("searcher");
     let test = document.createElement("div");
-    test.className = "search";
+    test.className = "product-search";
     test.innerHTML += `<input placeholder="Поиск по названию" id="search-input" class = "wideinputbox"  />`;
     test.innerHTML +=`<div class = "search-btn" onclick="setsearch()"><ion-icon name="arrow-forward-circle-outline" class = "icon-search"></ion-icon></div>`
 
@@ -94,7 +94,7 @@ function loadSearchHTMLTable(data) {
         data.forEach(({ img, title, start_price, spuId }) => {
             catalog += `
 
-            <a class="card" id="${spuId}" href="detail.html?id=${spuId}&page=${page}&search=${searchValue}" onclick="getPage()">
+            <a class="product-card" id="${spuId}" href="detail.html?id=${spuId}&page=${page}&search=${searchValue}" onclick="getPage()">
                 <div class="item">
                     <img src="${img}" alt="" class="img">
                 </div>

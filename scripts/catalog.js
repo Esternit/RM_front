@@ -44,7 +44,7 @@ function loadSearchHTMLTable(data) {
         data.forEach(({ img, title, start_price, spuId }) => {
             catalog += `
 
-            <a class="card" id="${spuId}" href="detail.html?id=${spuId}&page=${page}&search=${searchValue}" onclick="getPage()">
+            <a class="product-card" id="${spuId}" href="detail.html?id=${spuId}&page=${page}&search=${searchValue}" onclick="getPage()">
                 <div class="item">
                     <img src="${img}" alt="" class="img">
                 </div>
@@ -148,7 +148,7 @@ function loadHTMLTable(data) {
         console.log(data);
         data.forEach(({ img, title, start_price, spuId }) => {
             catalog += `
-            <a class="card" id="${spuId}" href="detail.html?id=${spuId}&page=${page}" onclick="getPage()">
+            <a class="product-card" id="${spuId}" href="detail.html?id=${spuId}&page=${page}" onclick="getPage()">
                 <div class="item">
                     <img src="${img}" alt="" class="img">
                 </div>
