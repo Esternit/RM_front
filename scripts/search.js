@@ -70,19 +70,19 @@ function resetsearch() {
     searchValue = document.querySelector('#search-input').value;
     page = new URLSearchParams(window.location.search).get("page");
     start = new URLSearchParams(window.location.search).get("start");
-    if(start == 1){
+    if (start == 1) {
         doning = 0;
     }
-    else{
+    else {
         doning = 1;
     }
-    
+
     fetch('https://rmstoreapi-production.up.railway.app/searchDataFromStart/' + searchValue, {
         headers: {
             'Content-type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ limiter: limit, paging: page , store: "RM"})
+        body: JSON.stringify({ limiter: limit, paging: page, store: "RM" })
     })
         .then(response => response.json())
         .then(data => loadSearchHTMLTable(data['data']));

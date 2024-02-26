@@ -19,14 +19,14 @@ function loadsearch() {
     let test = document.createElement("div");
     test.className = "product-search";
     test.innerHTML += `<input placeholder="Поиск по названию" id="search-input" class = "wideinputbox"  />`;
-    test.innerHTML +=`<div class = "search-btn" onclick="searchfunc()"><ion-icon name="arrow-forward-circle-outline" class = "icon-search"></ion-icon></div>`
+    test.innerHTML += `<div class = "search-btn" onclick="searchfunc()"><ion-icon name="arrow-forward-circle-outline" class = "icon-search"></ion-icon></div>`
 
     searcher.appendChild(test);
     if (sh != null) {
         document.getElementById("search-input").value = sh;
 
     }
-    
+
 }
 
 function testFunc() {
