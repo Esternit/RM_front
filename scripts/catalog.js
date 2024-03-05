@@ -24,7 +24,7 @@ function resetsearch() {
     searchValue = new URLSearchParams(window.location.search).get("search");
     page = new URLSearchParams(window.location.search).get("page");
     scrollneed = 1;
-    fetch('https://rmstoreapi-production.up.railway.app/searchDataFromStart/' + searchValue, {
+    fetch('https://rmstore-api.onrender.com/searchDataFromStart/' + searchValue, {
         headers: {
             'Content-type': 'application/json'
         },
@@ -109,7 +109,7 @@ function loader() {
         if (doning == 1 || cookieValue == null) {
 
 
-            fetch('https://rmstoreapi-production.up.railway.app/getAll', {
+            fetch('https://rmstore-api.onrender.com/getAll', {
                 headers: {
                     'Content-type': 'application/json'
                 },
@@ -123,7 +123,7 @@ function loader() {
 
 
             console.log(cookieValue, doning);
-            fetch('https://rmstoreapi-production.up.railway.app/getAllDataFromStart', {
+            fetch('https://rmstore-api.onrender.com/getAllDataFromStart', {
                 headers: {
                     'Content-type': 'application/json'
                 },

@@ -30,7 +30,7 @@ BackButton.onClick(function () {
 
 document.addEventListener('DOMContentLoaded', function () {
     const Id = new URLSearchParams(window.location.search).get('id');
-    fetch('https://rmstoreapi-production.up.railway.app/getById', {
+    fetch('https://rmstore-api.onrender.com/getById', {
         headers: {
             'Content-type': 'application/json'
         },

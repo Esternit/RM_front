@@ -13,7 +13,7 @@ function searchfunc() {
     }
     else {
         console.log(page);
-        fetch('https://rmstoreapi-production.up.railway.app/search/' + searchValue, {
+        fetch('https://rmstore-api.onrender.com/search/' + searchValue, {
             headers: {
                 'Content-type': 'application/json'
             },
@@ -77,7 +77,7 @@ function resetsearch() {
         doning = 1;
     }
 
-    fetch('https://rmstoreapi-production.up.railway.app/searchDataFromStart/' + searchValue, {
+    fetch('https://rmstore-api.onrender.com/searchDataFromStart/' + searchValue, {
         headers: {
             'Content-type': 'application/json'
         },
