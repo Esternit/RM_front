@@ -18,7 +18,8 @@ BackButton.onClick(function () {
 tg.expand();
 tg.MainButton.hide();
 console.log("info");
-console.log(window.Telegram.WebApp.WebAppUser);
+const { first_name, last_name, username } = window.Telegram.WebApp.initDataUnsafe.user;
+console.log(first_name, last_name, username );
 function resetsearch() {
     search = 1;
     timescalled++;
