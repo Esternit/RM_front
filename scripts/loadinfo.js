@@ -139,6 +139,7 @@ function moveSlideByTouch(event) {
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
     tg.sendData(item);
+    tg.switchInlineQuery("test");
 });
 
 function test() {
