@@ -17,6 +17,7 @@ BackButton.onClick(function () {
 
 tg.expand();
 tg.MainButton.hide();
+console.log("info");
 console.log(window.Telegram.WebApp.WebAppUser);
 function resetsearch() {
     search = 1;
