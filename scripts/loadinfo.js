@@ -139,7 +139,13 @@ function moveSlideByTouch(event) {
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
     tg.sendData(item);
-    tg.HapticFeedback.impactOccurred("light");
+    fetch('https://rmstore-api.onrender.com/sendMessage', {
+        headers: {
+            'Content-type': 'application/json'
+        },
+        method: 'POST',
+        body: item
+    })
 });
 
 function test() {
