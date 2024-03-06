@@ -139,7 +139,7 @@ function moveSlideByTouch(event) {
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
     tg.sendData(item);
-    
+    tg.HapticFeedback.impactOccurred("light");
 });
 
 function test() {
