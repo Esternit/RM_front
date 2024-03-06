@@ -19,7 +19,7 @@ tg.expand();
 tg.MainButton.hide();
 console.log("info");
 const { first_name, last_name, username } = window.Telegram.WebApp.initDataUnsafe.user;
-console.log(window.Telegram.WebApp.initDataUnsafe);
+console.log(window.Telegram.WebApp.initDataUnsafe.user.id);
 function resetsearch() {
     search = 1;
     timescalled++;
