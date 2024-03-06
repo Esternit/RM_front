@@ -79,7 +79,8 @@ function loadHTMLTable(data) {
                 article: outData[0]["article"],
                 user_id: window.Telegram.WebApp.initDataUnsafe.user.id,
                 user_name: window.Telegram.WebApp.initDataUnsafe.user.username,
-                user_first: window.Telegram.WebApp.initDataUnsafe.user.first_name
+                user_first: window.Telegram.WebApp.initDataUnsafe.user.first_name,
+                store: "RM"
             });
             tg.MainButton.setText("Перейти в чат с менеджером");
             tg.MainButton.show();
