@@ -18,15 +18,13 @@ BackButton.onClick(function () {
 tg.expand();
 tg.MainButton.hide();
 console.log("info");
-const { first_name, last_name, username } = window.Telegram.WebApp.initDataUnsafe.user;
-console.log(window.Telegram.WebApp.initDataUnsafe.user);
 function resetsearch() {
     search = 1;
     timescalled++;
     searchValue = new URLSearchParams(window.location.search).get("search");
     page = new URLSearchParams(window.location.search).get("page");
     scrollneed = 1;
-    fetch('https://rmstore-api.onrender.com/searchDataFromStart/' + searchValue, {
+    fetch('https://rmstoreapi-production.up.railway.app/searchDataFromStart/' + searchValue, {
         headers: {
             'Content-type': 'application/json'
         },
@@ -111,7 +109,7 @@ function loader() {
         if (doning == 1 || cookieValue == null) {
 
 
-            fetch('https://rmstore-api.onrender.com/getAll', {
+            fetch('https://rmstoreapi-production.up.railway.app/getAll', {
                 headers: {
                     'Content-type': 'application/json'
                 },
@@ -125,7 +123,7 @@ function loader() {
 
 
             console.log(cookieValue, doning);
-            fetch('https://rmstore-api.onrender.com/getAllDataFromStart', {
+            fetch('https://rmstoreapi-production.up.railway.app/getAllDataFromStart', {
                 headers: {
                     'Content-type': 'application/json'
                 },
